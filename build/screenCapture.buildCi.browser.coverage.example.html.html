@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <title>Code coverage report for node-npmtest-q/q/q.js</title>
     <meta charset="utf-8">
     <style>
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-q/q/</a> &#187; q.js</div>
+    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-q/q/</a> » q.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -4399,45 +4397,45 @@
     // executed as a simple &lt;script&gt;, it creates a Q global instead.
 &nbsp;
     // Montage Require
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof bootstrap === "function") {
-<span class="cstat-no" title="statement not covered" >        bootstrap("promise", definition);</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (typeof bootstrap === "function") {
+<span class="cstat-no" title="statement not covered">        bootstrap("promise", definition);</span>
 &nbsp;
     // CommonJS
-    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof exports === "object" &amp;&amp; typeof module === "object") {
+    } else <span class="missing-if-branch" title="else path not taken">E</span>if (typeof exports === "object" &amp;&amp; typeof module === "object") {
         module.exports = definition();
 &nbsp;
     // RequireJS
-    } else <span class="cstat-no" title="statement not covered" >if (typeof define === "function" &amp;&amp; define.amd) {</span>
-<span class="cstat-no" title="statement not covered" >        define(definition);</span>
+    } else <span class="cstat-no" title="statement not covered">if (typeof define === "function" &amp;&amp; define.amd) {</span>
+<span class="cstat-no" title="statement not covered">        define(definition);</span>
 &nbsp;
     // SES (Secure EcmaScript)
-    } else <span class="cstat-no" title="statement not covered" >if (typeof ses !== "undefined") {</span>
-<span class="cstat-no" title="statement not covered" >        if (!ses.ok()) {</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+    } else <span class="cstat-no" title="statement not covered">if (typeof ses !== "undefined") {</span>
+<span class="cstat-no" title="statement not covered">        if (!ses.ok()) {</span>
+<span class="cstat-no" title="statement not covered">            return;</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            ses.makeQ = definition;</span>
+<span class="cstat-no" title="statement not covered">            ses.makeQ = definition;</span>
         }
 &nbsp;
     // &lt;script&gt;
-    } else <span class="cstat-no" title="statement not covered" >if (typeof window !== "undefined" || typeof self !== "undefined") {</span>
+    } else <span class="cstat-no" title="statement not covered">if (typeof window !== "undefined" || typeof self !== "undefined") {</span>
         // Prefer window over self for add-on scripts. Use self for
         // non-windowed contexts.
-<span class="cstat-no" title="statement not covered" >        var global = typeof window !== "undefined" ? window : self;</span>
+<span class="cstat-no" title="statement not covered">        var global = typeof window !== "undefined" ? window : self;</span>
 &nbsp;
         // Get the `window` object, save the previous Q global
         // and initialize Q as a global.
-<span class="cstat-no" title="statement not covered" >        var previousQ = global.Q;</span>
-<span class="cstat-no" title="statement not covered" >        global.Q = definition();</span>
+<span class="cstat-no" title="statement not covered">        var previousQ = global.Q;</span>
+<span class="cstat-no" title="statement not covered">        global.Q = definition();</span>
 &nbsp;
         // Add a noConflict function so Q can be removed from the
         // global namespace.
-<span class="cstat-no" title="statement not covered" >        global.Q.noConflict = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            global.Q = previousQ;</span>
-<span class="cstat-no" title="statement not covered" >            return this;</span>
+<span class="cstat-no" title="statement not covered">        global.Q.noConflict = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            global.Q = previousQ;</span>
+<span class="cstat-no" title="statement not covered">            return this;</span>
         };
 &nbsp;
     } else {
-<span class="cstat-no" title="statement not covered" >        throw new Error("This environment was not anticipated by Q. Please file a bug.");</span>
+<span class="cstat-no" title="statement not covered">        throw new Error("This environment was not anticipated by Q. Please file a bug.");</span>
     }
 &nbsp;
 })(function () {
@@ -4458,7 +4456,7 @@ var qFileName;
 // shims
 &nbsp;
 // used for fallback in "allResolved"
-var noop = <span class="fstat-no" title="function not covered" >function () {</span>};
+var noop = <span class="fstat-no" title="function not covered">function () {</span>};
 &nbsp;
 // Use the fastest possible means to execute a task in a future turn
 // of the event loop.
@@ -4472,80 +4470,80 @@ var nextTick =(function () {
     // queue for late tasks, used by unhandled rejection tracking
     var laterQueue = [];
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function flush() {</span>
+<span class="fstat-no" title="function not covered">    function flush() {</span>
         /* jshint loopfunc: true */
-<span class="cstat-no" title="statement not covered" >        var task, domain;</span>
+<span class="cstat-no" title="statement not covered">        var task, domain;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        while (head.next) {</span>
-<span class="cstat-no" title="statement not covered" >            head = head.next;</span>
-<span class="cstat-no" title="statement not covered" >            task = head.task;</span>
-<span class="cstat-no" title="statement not covered" >            head.task = void 0;</span>
-<span class="cstat-no" title="statement not covered" >            domain = head.domain;</span>
+<span class="cstat-no" title="statement not covered">        while (head.next) {</span>
+<span class="cstat-no" title="statement not covered">            head = head.next;</span>
+<span class="cstat-no" title="statement not covered">            task = head.task;</span>
+<span class="cstat-no" title="statement not covered">            head.task = void 0;</span>
+<span class="cstat-no" title="statement not covered">            domain = head.domain;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (domain) {</span>
-<span class="cstat-no" title="statement not covered" >                head.domain = void 0;</span>
-<span class="cstat-no" title="statement not covered" >                domain.enter();</span>
+<span class="cstat-no" title="statement not covered">            if (domain) {</span>
+<span class="cstat-no" title="statement not covered">                head.domain = void 0;</span>
+<span class="cstat-no" title="statement not covered">                domain.enter();</span>
             }
-<span class="cstat-no" title="statement not covered" >            runSingle(task, domain);</span>
+<span class="cstat-no" title="statement not covered">            runSingle(task, domain);</span>
 &nbsp;
         }
-<span class="cstat-no" title="statement not covered" >        while (laterQueue.length) {</span>
-<span class="cstat-no" title="statement not covered" >            task = laterQueue.pop();</span>
-<span class="cstat-no" title="statement not covered" >            runSingle(task);</span>
+<span class="cstat-no" title="statement not covered">        while (laterQueue.length) {</span>
+<span class="cstat-no" title="statement not covered">            task = laterQueue.pop();</span>
+<span class="cstat-no" title="statement not covered">            runSingle(task);</span>
         }
-<span class="cstat-no" title="statement not covered" >        flushing = false;</span>
+<span class="cstat-no" title="statement not covered">        flushing = false;</span>
     }
     // runs a single function in the async queue
-<span class="fstat-no" title="function not covered" >    function runSingle(task, domain) {</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            task();</span>
+<span class="fstat-no" title="function not covered">    function runSingle(task, domain) {</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            task();</span>
 &nbsp;
         } catch (e) {
-<span class="cstat-no" title="statement not covered" >            if (isNodeJS) {</span>
+<span class="cstat-no" title="statement not covered">            if (isNodeJS) {</span>
                 // In node, uncaught exceptions are considered fatal errors.
                 // Re-throw them synchronously to interrupt flushing!
 &nbsp;
                 // Ensure continuation if the uncaught exception is suppressed
                 // listening "uncaughtException" events (as domains does).
                 // Continue in next event to avoid tick recursion.
-<span class="cstat-no" title="statement not covered" >                if (domain) {</span>
-<span class="cstat-no" title="statement not covered" >                    domain.exit();</span>
+<span class="cstat-no" title="statement not covered">                if (domain) {</span>
+<span class="cstat-no" title="statement not covered">                    domain.exit();</span>
                 }
-<span class="cstat-no" title="statement not covered" >                setTimeout(flush, 0);</span>
-<span class="cstat-no" title="statement not covered" >                if (domain) {</span>
-<span class="cstat-no" title="statement not covered" >                    domain.enter();</span>
+<span class="cstat-no" title="statement not covered">                setTimeout(flush, 0);</span>
+<span class="cstat-no" title="statement not covered">                if (domain) {</span>
+<span class="cstat-no" title="statement not covered">                    domain.enter();</span>
                 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                throw e;</span>
+<span class="cstat-no" title="statement not covered">                throw e;</span>
 &nbsp;
             } else {
                 // In browsers, uncaught exceptions are not fatal.
                 // Re-throw them asynchronously to avoid slow-downs.
-<span class="cstat-no" title="statement not covered" >                setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                    throw e;</span>
+<span class="cstat-no" title="statement not covered">                setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                    throw e;</span>
                 }, 0);
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (domain) {</span>
-<span class="cstat-no" title="statement not covered" >            domain.exit();</span>
+<span class="cstat-no" title="statement not covered">        if (domain) {</span>
+<span class="cstat-no" title="statement not covered">            domain.exit();</span>
         }
     }
 &nbsp;
-    nextTick = <span class="fstat-no" title="function not covered" >function (task) {</span>
-<span class="cstat-no" title="statement not covered" >        tail = tail.next = {</span>
+    nextTick = <span class="fstat-no" title="function not covered">function (task) {</span>
+<span class="cstat-no" title="statement not covered">        tail = tail.next = {</span>
             task: task,
             domain: isNodeJS &amp;&amp; process.domain,
             next: null
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!flushing) {</span>
-<span class="cstat-no" title="statement not covered" >            flushing = true;</span>
-<span class="cstat-no" title="statement not covered" >            requestTick();</span>
+<span class="cstat-no" title="statement not covered">        if (!flushing) {</span>
+<span class="cstat-no" title="statement not covered">            flushing = true;</span>
+<span class="cstat-no" title="statement not covered">            requestTick();</span>
         }
     };
 &nbsp;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof process === "object" &amp;&amp;
+    <span class="missing-if-branch" title="else path not taken">E</span>if (typeof process === "object" &amp;&amp;
         process.toString() === "[object process]" &amp;&amp; process.nextTick) {
         // Ensure Q is in a real Node environment, with a `process.nextTick`.
         // To see through fake Node environments:
@@ -4557,55 +4555,55 @@ var nextTick =(function () {
         //   `process.toString()` yields "[object process]".
         isNodeJS = true;
 &nbsp;
-        requestTick = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >            process.nextTick(flush);</span>
+        requestTick = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">            process.nextTick(flush);</span>
         };
 &nbsp;
-    } else <span class="cstat-no" title="statement not covered" >if (typeof setImmediate === "function") {</span>
+    } else <span class="cstat-no" title="statement not covered">if (typeof setImmediate === "function") {</span>
         // In IE10, Node.js 0.9+, or https://github.com/NobleJS/setImmediate
-<span class="cstat-no" title="statement not covered" >        if (typeof window !== "undefined") {</span>
-<span class="cstat-no" title="statement not covered" >            requestTick = setImmediate.bind(window, flush);</span>
+<span class="cstat-no" title="statement not covered">        if (typeof window !== "undefined") {</span>
+<span class="cstat-no" title="statement not covered">            requestTick = setImmediate.bind(window, flush);</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            requestTick = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                setImmediate(flush);</span>
+<span class="cstat-no" title="statement not covered">            requestTick = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                setImmediate(flush);</span>
             };
         }
 &nbsp;
-    } else <span class="cstat-no" title="statement not covered" >if (typeof MessageChannel !== "undefined") {</span>
+    } else <span class="cstat-no" title="statement not covered">if (typeof MessageChannel !== "undefined") {</span>
         // modern browsers
         // http://www.nonblocking.io/2011/06/windownexttick.html
-<span class="cstat-no" title="statement not covered" >        var channel = new MessageChannel();</span>
+<span class="cstat-no" title="statement not covered">        var channel = new MessageChannel();</span>
         // At least Safari Version 6.0.5 (8536.30.1) intermittently cannot create
         // working message ports the first time a page loads.
-<span class="cstat-no" title="statement not covered" >        channel.port1.onmessage = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            requestTick = requestPortTick;</span>
-<span class="cstat-no" title="statement not covered" >            channel.port1.onmessage = flush;</span>
-<span class="cstat-no" title="statement not covered" >            flush();</span>
+<span class="cstat-no" title="statement not covered">        channel.port1.onmessage = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            requestTick = requestPortTick;</span>
+<span class="cstat-no" title="statement not covered">            channel.port1.onmessage = flush;</span>
+<span class="cstat-no" title="statement not covered">            flush();</span>
         };
-<span class="cstat-no" title="statement not covered" >        var requestPortTick = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered">        var requestPortTick = <span class="fstat-no" title="function not covered">function () {</span></span>
             // Opera requires us to provide a message payload, regardless of
             // whether we use it.
-<span class="cstat-no" title="statement not covered" >            channel.port2.postMessage(0);</span>
+<span class="cstat-no" title="statement not covered">            channel.port2.postMessage(0);</span>
         };
-<span class="cstat-no" title="statement not covered" >        requestTick = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            setTimeout(flush, 0);</span>
-<span class="cstat-no" title="statement not covered" >            requestPortTick();</span>
+<span class="cstat-no" title="statement not covered">        requestTick = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            setTimeout(flush, 0);</span>
+<span class="cstat-no" title="statement not covered">            requestPortTick();</span>
         };
 &nbsp;
     } else {
         // old browsers
-<span class="cstat-no" title="statement not covered" >        requestTick = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            setTimeout(flush, 0);</span>
+<span class="cstat-no" title="statement not covered">        requestTick = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            setTimeout(flush, 0);</span>
         };
     }
     // runs a task after all other tasks have been run
     // this is useful for unhandled rejection tracking that needs to happen
     // after all `then`d tasks have been run.
-    nextTick.runAfter = <span class="fstat-no" title="function not covered" >function (task) {</span>
-<span class="cstat-no" title="statement not covered" >        laterQueue.push(task);</span>
-<span class="cstat-no" title="statement not covered" >        if (!flushing) {</span>
-<span class="cstat-no" title="statement not covered" >            flushing = true;</span>
-<span class="cstat-no" title="statement not covered" >            requestTick();</span>
+    nextTick.runAfter = <span class="fstat-no" title="function not covered">function (task) {</span>
+<span class="cstat-no" title="statement not covered">        laterQueue.push(task);</span>
+<span class="cstat-no" title="statement not covered">        if (!flushing) {</span>
+<span class="cstat-no" title="statement not covered">            flushing = true;</span>
+<span class="cstat-no" title="statement not covered">            requestTick();</span>
         }
     };
     return nextTick;
@@ -4623,8 +4621,8 @@ var nextTick =(function () {
 // http://wiki.ecmascript.org/doku.php?id=conventions:safe_meta_programming
 var call = Function.call;
 function uncurryThis(f) {
-    return <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        return call.apply(f, arguments);</span>
+    return <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">        return call.apply(f, arguments);</span>
     };
 }
 // This is equivalent, but slower:
@@ -4634,91 +4632,91 @@ function uncurryThis(f) {
 var array_slice = uncurryThis(Array.prototype.slice);
 &nbsp;
 var array_reduce = uncurryThis(
-    Array.prototype.reduce || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (callback, basis) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var index = 0,</span>
+    Array.prototype.reduce || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function (callback, basis) {</span></span>
+<span class="cstat-no" title="statement not covered">        var index = 0,</span>
             length = this.length;
         // concerning the initial value, if one is not provided
-<span class="cstat-no" title="statement not covered" >        if (arguments.length === 1) {</span>
+<span class="cstat-no" title="statement not covered">        if (arguments.length === 1) {</span>
             // seek to the first value in the array, accounting
             // for the possibility that is is a sparse array
-<span class="cstat-no" title="statement not covered" >            do {</span>
-<span class="cstat-no" title="statement not covered" >                if (index in this) {</span>
-<span class="cstat-no" title="statement not covered" >                    basis = this[index++];</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">            do {</span>
+<span class="cstat-no" title="statement not covered">                if (index in this) {</span>
+<span class="cstat-no" title="statement not covered">                    basis = this[index++];</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 }
-<span class="cstat-no" title="statement not covered" >                if (++index &gt;= length) {</span>
-<span class="cstat-no" title="statement not covered" >                    throw new TypeError();</span>
+<span class="cstat-no" title="statement not covered">                if (++index &gt;= length) {</span>
+<span class="cstat-no" title="statement not covered">                    throw new TypeError();</span>
                 }
             } while (1);
         }
         // reduce
-<span class="cstat-no" title="statement not covered" >        for (; index &lt; length; index++) {</span>
+<span class="cstat-no" title="statement not covered">        for (; index &lt; length; index++) {</span>
             // account for the possibility that the array is sparse
-<span class="cstat-no" title="statement not covered" >            if (index in this) {</span>
-<span class="cstat-no" title="statement not covered" >                basis = callback(basis, this[index], index);</span>
+<span class="cstat-no" title="statement not covered">            if (index in this) {</span>
+<span class="cstat-no" title="statement not covered">                basis = callback(basis, this[index], index);</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        return basis;</span>
+<span class="cstat-no" title="statement not covered">        return basis;</span>
     }
 );
 &nbsp;
 var array_indexOf = uncurryThis(
-    Array.prototype.indexOf || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (value) {</span></span>
+    Array.prototype.indexOf || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function (value) {</span></span>
         // not a very good shim, but good enough for our one use of it
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; this.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            if (this[i] === value) {</span>
-<span class="cstat-no" title="statement not covered" >                return i;</span>
+<span class="cstat-no" title="statement not covered">        for (var i = 0; i &lt; this.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">            if (this[i] === value) {</span>
+<span class="cstat-no" title="statement not covered">                return i;</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        return -1;</span>
+<span class="cstat-no" title="statement not covered">        return -1;</span>
     }
 );
 &nbsp;
 var array_map = uncurryThis(
-    Array.prototype.map || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (callback, thisp) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var self = this;</span>
-<span class="cstat-no" title="statement not covered" >        var collect = [];</span>
-<span class="cstat-no" title="statement not covered" >        array_reduce(self, <span class="fstat-no" title="function not covered" >function (undefined, value, index) {</span></span>
-<span class="cstat-no" title="statement not covered" >            collect.push(callback.call(thisp, value, index, self));</span>
+    Array.prototype.map || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function (callback, thisp) {</span></span>
+<span class="cstat-no" title="statement not covered">        var self = this;</span>
+<span class="cstat-no" title="statement not covered">        var collect = [];</span>
+<span class="cstat-no" title="statement not covered">        array_reduce(self, <span class="fstat-no" title="function not covered">function (undefined, value, index) {</span></span>
+<span class="cstat-no" title="statement not covered">            collect.push(callback.call(thisp, value, index, self));</span>
         }, void 0);
-<span class="cstat-no" title="statement not covered" >        return collect;</span>
+<span class="cstat-no" title="statement not covered">        return collect;</span>
     }
 );
 &nbsp;
-var object_create = Object.create || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (prototype) {</span></span>
-<span class="fstat-no" title="function not covered" >    function Type() {</span> }
-<span class="cstat-no" title="statement not covered" >    Type.prototype = prototype;</span>
-<span class="cstat-no" title="statement not covered" >    return new Type();</span>
+var object_create = Object.create || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function (prototype) {</span></span>
+<span class="fstat-no" title="function not covered">    function Type() {</span> }
+<span class="cstat-no" title="statement not covered">    Type.prototype = prototype;</span>
+<span class="cstat-no" title="statement not covered">    return new Type();</span>
 };
 &nbsp;
-var object_defineProperty = Object.defineProperty || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (obj, prop, descriptor) {</span></span>
-<span class="cstat-no" title="statement not covered" >    obj[prop] = descriptor.value;</span>
-<span class="cstat-no" title="statement not covered" >    return obj;</span>
+var object_defineProperty = Object.defineProperty || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function (obj, prop, descriptor) {</span></span>
+<span class="cstat-no" title="statement not covered">    obj[prop] = descriptor.value;</span>
+<span class="cstat-no" title="statement not covered">    return obj;</span>
 };
 &nbsp;
 var object_hasOwnProperty = uncurryThis(Object.prototype.hasOwnProperty);
 &nbsp;
-var object_keys = Object.keys || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (object) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var keys = [];</span>
-<span class="cstat-no" title="statement not covered" >    for (var key in object) {</span>
-<span class="cstat-no" title="statement not covered" >        if (object_hasOwnProperty(object, key)) {</span>
-<span class="cstat-no" title="statement not covered" >            keys.push(key);</span>
+var object_keys = Object.keys || <span class="fstat-no" title="function not covered"><span class="branch-1 cbranch-no" title="branch not covered">function (object) {</span></span>
+<span class="cstat-no" title="statement not covered">    var keys = [];</span>
+<span class="cstat-no" title="statement not covered">    for (var key in object) {</span>
+<span class="cstat-no" title="statement not covered">        if (object_hasOwnProperty(object, key)) {</span>
+<span class="cstat-no" title="statement not covered">            keys.push(key);</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    return keys;</span>
+<span class="cstat-no" title="statement not covered">    return keys;</span>
 };
 &nbsp;
 var object_toString = uncurryThis(Object.prototype.toString);
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isObject(value) {</span>
-<span class="cstat-no" title="statement not covered" >    return value === Object(value);</span>
+<span class="fstat-no" title="function not covered">function isObject(value) {</span>
+<span class="cstat-no" title="statement not covered">    return value === Object(value);</span>
 }
 &nbsp;
 // generator related shims
 &nbsp;
 // FIXME: Remove this function once ES6 generators are in SpiderMonkey.
-<span class="fstat-no" title="function not covered" >function isStopIteration(exception) {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="fstat-no" title="function not covered">function isStopIteration(exception) {</span>
+<span class="cstat-no" title="statement not covered">    return (</span>
         object_toString(exception) === "[object StopIteration]" ||
         exception instanceof QReturnValue
     );
@@ -4727,11 +4725,11 @@ var object_toString = uncurryThis(Object.prototype.toString);
 // FIXME: Remove this helper and Q.return once ES6 generators are in
 // SpiderMonkey.
 var QReturnValue;
-<span class="missing-if-branch" title="if path not taken" >I</span>if (typeof ReturnValue !== "undefined") {
-<span class="cstat-no" title="statement not covered" >    QReturnValue = ReturnValue;</span>
+<span class="missing-if-branch" title="if path not taken">I</span>if (typeof ReturnValue !== "undefined") {
+<span class="cstat-no" title="statement not covered">    QReturnValue = ReturnValue;</span>
 } else {
-    QReturnValue = <span class="fstat-no" title="function not covered" >function (value) {</span>
-<span class="cstat-no" title="statement not covered" >        this.value = value;</span>
+    QReturnValue = <span class="fstat-no" title="function not covered">function (value) {</span>
+<span class="cstat-no" title="statement not covered">        this.value = value;</span>
     };
 }
 &nbsp;
@@ -4739,45 +4737,45 @@ var QReturnValue;
 &nbsp;
 var STACK_JUMP_SEPARATOR = "From previous event:";
 &nbsp;
-<span class="fstat-no" title="function not covered" >function makeStackTraceLong(error, promise) {</span>
+<span class="fstat-no" title="function not covered">function makeStackTraceLong(error, promise) {</span>
     // If possible, transform the error stack trace by removing Node and Q
     // cruft, then concatenating with the stack trace of `promise`. See #57.
-<span class="cstat-no" title="statement not covered" >    if (hasStacks &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered">    if (hasStacks &amp;&amp;</span>
         promise.stack &amp;&amp;
         typeof error === "object" &amp;&amp;
         error !== null &amp;&amp;
         error.stack
     ) {
-<span class="cstat-no" title="statement not covered" >        var stacks = [];</span>
-<span class="cstat-no" title="statement not covered" >        for (var p = promise; !!p; p = p.source) {</span>
-<span class="cstat-no" title="statement not covered" >            if (p.stack &amp;&amp; (!error.__minimumStackCounter__ || error.__minimumStackCounter__ &gt; p.stackCounter)) {</span>
-<span class="cstat-no" title="statement not covered" >                object_defineProperty(error, "__minimumStackCounter__", {value: p.stackCounter, configurable: true});</span>
-<span class="cstat-no" title="statement not covered" >                stacks.unshift(p.stack);</span>
+<span class="cstat-no" title="statement not covered">        var stacks = [];</span>
+<span class="cstat-no" title="statement not covered">        for (var p = promise; !!p; p = p.source) {</span>
+<span class="cstat-no" title="statement not covered">            if (p.stack &amp;&amp; (!error.__minimumStackCounter__ || error.__minimumStackCounter__ &gt; p.stackCounter)) {</span>
+<span class="cstat-no" title="statement not covered">                object_defineProperty(error, "__minimumStackCounter__", {value: p.stackCounter, configurable: true});</span>
+<span class="cstat-no" title="statement not covered">                stacks.unshift(p.stack);</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        stacks.unshift(error.stack);</span>
+<span class="cstat-no" title="statement not covered">        stacks.unshift(error.stack);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        var concatedStacks = stacks.join("\n" + STACK_JUMP_SEPARATOR + "\n");</span>
-<span class="cstat-no" title="statement not covered" >        var stack = filterStackString(concatedStacks);</span>
-<span class="cstat-no" title="statement not covered" >        object_defineProperty(error, "stack", {value: stack, configurable: true});</span>
+<span class="cstat-no" title="statement not covered">        var concatedStacks = stacks.join("\n" + STACK_JUMP_SEPARATOR + "\n");</span>
+<span class="cstat-no" title="statement not covered">        var stack = filterStackString(concatedStacks);</span>
+<span class="cstat-no" title="statement not covered">        object_defineProperty(error, "stack", {value: stack, configurable: true});</span>
     }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function filterStackString(stackString) {</span>
-<span class="cstat-no" title="statement not covered" >    var lines = stackString.split("\n");</span>
-<span class="cstat-no" title="statement not covered" >    var desiredLines = [];</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; lines.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >        var line = lines[i];</span>
+<span class="fstat-no" title="function not covered">function filterStackString(stackString) {</span>
+<span class="cstat-no" title="statement not covered">    var lines = stackString.split("\n");</span>
+<span class="cstat-no" title="statement not covered">    var desiredLines = [];</span>
+<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; lines.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered">        var line = lines[i];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!isInternalFrame(line) &amp;&amp; !isNodeFrame(line) &amp;&amp; line) {</span>
-<span class="cstat-no" title="statement not covered" >            desiredLines.push(line);</span>
+<span class="cstat-no" title="statement not covered">        if (!isInternalFrame(line) &amp;&amp; !isNodeFrame(line) &amp;&amp; line) {</span>
+<span class="cstat-no" title="statement not covered">            desiredLines.push(line);</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    return desiredLines.join("\n");</span>
+<span class="cstat-no" title="statement not covered">    return desiredLines.join("\n");</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isNodeFrame(stackLine) {</span>
-<span class="cstat-no" title="statement not covered" >    return stackLine.indexOf("(module.js:") !== -1 ||</span>
+<span class="fstat-no" title="function not covered">function isNodeFrame(stackLine) {</span>
+<span class="cstat-no" title="statement not covered">    return stackLine.indexOf("(module.js:") !== -1 ||</span>
            stackLine.indexOf("(node.js:") !== -1;
 }
 &nbsp;
@@ -4785,34 +4783,34 @@ function getFileNameAndLineNumber(stackLine) {
     // Named functions: "at functionName (filename:lineNumber:columnNumber)"
     // In IE10 function name can have spaces ("Anonymous function") O_o
     var attempt1 = /at .+ \((.+):(\d+):(?:\d+)\)$/.exec(stackLine);
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (attempt1) {
-<span class="cstat-no" title="statement not covered" >        return [attempt1[1], Number(attempt1[2])];</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (attempt1) {
+<span class="cstat-no" title="statement not covered">        return [attempt1[1], Number(attempt1[2])];</span>
     }
 &nbsp;
     // Anonymous functions: "at filename:lineNumber:columnNumber"
     var attempt2 = /at ([^ ]+):(\d+):(?:\d+)$/.exec(stackLine);
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (attempt2) {
+    <span class="missing-if-branch" title="else path not taken">E</span>if (attempt2) {
         return [attempt2[1], Number(attempt2[2])];
     }
 &nbsp;
     // Firefox style: "function@filename:lineNumber or @filename:lineNumber"
-<span class="cstat-no" title="statement not covered" >    var attempt3 = /.*@(.+):(\d+)$/.exec(stackLine);</span>
-<span class="cstat-no" title="statement not covered" >    if (attempt3) {</span>
-<span class="cstat-no" title="statement not covered" >        return [attempt3[1], Number(attempt3[2])];</span>
+<span class="cstat-no" title="statement not covered">    var attempt3 = /.*@(.+):(\d+)$/.exec(stackLine);</span>
+<span class="cstat-no" title="statement not covered">    if (attempt3) {</span>
+<span class="cstat-no" title="statement not covered">        return [attempt3[1], Number(attempt3[2])];</span>
     }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isInternalFrame(stackLine) {</span>
-<span class="cstat-no" title="statement not covered" >    var fileNameAndLineNumber = getFileNameAndLineNumber(stackLine);</span>
+<span class="fstat-no" title="function not covered">function isInternalFrame(stackLine) {</span>
+<span class="cstat-no" title="statement not covered">    var fileNameAndLineNumber = getFileNameAndLineNumber(stackLine);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!fileNameAndLineNumber) {</span>
-<span class="cstat-no" title="statement not covered" >        return false;</span>
+<span class="cstat-no" title="statement not covered">    if (!fileNameAndLineNumber) {</span>
+<span class="cstat-no" title="statement not covered">        return false;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var fileName = fileNameAndLineNumber[0];</span>
-<span class="cstat-no" title="statement not covered" >    var lineNumber = fileNameAndLineNumber[1];</span>
+<span class="cstat-no" title="statement not covered">    var fileName = fileNameAndLineNumber[0];</span>
+<span class="cstat-no" title="statement not covered">    var lineNumber = fileNameAndLineNumber[1];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return fileName === qFileName &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered">    return fileName === qFileName &amp;&amp;</span>
         lineNumber &gt;= qStartingLine &amp;&amp;
         lineNumber &lt;= qEndingLine;
 }
@@ -4820,18 +4818,18 @@ function getFileNameAndLineNumber(stackLine) {
 // discover own file name and line number range for filtering stack
 // traces
 function captureLine() {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!hasStacks) {
-<span class="cstat-no" title="statement not covered" >        return;</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (!hasStacks) {
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
 &nbsp;
     try {
         throw new Error();
     } catch (e) {
         var lines = e.stack.split("\n");
-        var firstLine = lines[0].indexOf("@") &gt; 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >lines[1] </span>: lines[2];
+        var firstLine = lines[0].indexOf("@") &gt; 0 ? <span class="branch-0 cbranch-no" title="branch not covered">lines[1] </span>: lines[2];
         var fileNameAndLineNumber = getFileNameAndLineNumber(firstLine);
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!fileNameAndLineNumber) {
-<span class="cstat-no" title="statement not covered" >            return;</span>
+        <span class="missing-if-branch" title="if path not taken">I</span>if (!fileNameAndLineNumber) {
+<span class="cstat-no" title="statement not covered">            return;</span>
         }
 &nbsp;
         qFileName = fileNameAndLineNumber[0];
@@ -4840,13 +4838,13 @@ function captureLine() {
 }
 &nbsp;
 function deprecate(callback, name, alternative) {
-    return <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        if (typeof console !== "undefined" &amp;&amp;</span>
+    return <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">        if (typeof console !== "undefined" &amp;&amp;</span>
             typeof console.warn === "function") {
-<span class="cstat-no" title="statement not covered" >            console.warn(name + " is deprecated, use " + alternative +</span>
+<span class="cstat-no" title="statement not covered">            console.warn(name + " is deprecated, use " + alternative +</span>
                          " instead.", new Error("").stack);
         }
-<span class="cstat-no" title="statement not covered" >        return callback.apply(callback, arguments);</span>
+<span class="cstat-no" title="statement not covered">        return callback.apply(callback, arguments);</span>
     };
 }
 &nbsp;
@@ -4858,19 +4856,19 @@ function deprecate(callback, name, alternative) {
  * coerces promises from different systems.
  * @param value immediate reference or promise
  */
-<span class="fstat-no" title="function not covered" >function Q(value) {</span>
+<span class="fstat-no" title="function not covered">function Q(value) {</span>
     // If the object is already a Promise, return it directly.  This enables
     // the resolve function to both be used to created references from objects,
     // but to tolerably coerce non-promises to promises.
-<span class="cstat-no" title="statement not covered" >    if (value instanceof Promise) {</span>
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">    if (value instanceof Promise) {</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }
 &nbsp;
     // assimilate thenables
-<span class="cstat-no" title="statement not covered" >    if (isPromiseAlike(value)) {</span>
-<span class="cstat-no" title="statement not covered" >        return coerce(value);</span>
+<span class="cstat-no" title="statement not covered">    if (isPromiseAlike(value)) {</span>
+<span class="cstat-no" title="statement not covered">        return coerce(value);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        return fulfill(value);</span>
+<span class="cstat-no" title="statement not covered">        return fulfill(value);</span>
     }
 }
 Q.resolve = Q;
@@ -4895,8 +4893,8 @@ Q.longStackSupport = false;
 var longStackCounter = 1;
 &nbsp;
 // enable long stacks if Q_DEBUG is set
-<span class="missing-if-branch" title="if path not taken" >I</span>if (typeof process === "object" &amp;&amp; process &amp;&amp; process.env &amp;&amp; process.env.Q_DEBUG) {
-<span class="cstat-no" title="statement not covered" >    Q.longStackSupport = true;</span>
+<span class="missing-if-branch" title="if path not taken">I</span>if (typeof process === "object" &amp;&amp; process &amp;&amp; process.env &amp;&amp; process.env.Q_DEBUG) {
+<span class="cstat-no" title="statement not covered">    Q.longStackSupport = true;</span>
 }
 &nbsp;
 /**
@@ -4910,54 +4908,54 @@ var longStackCounter = 1;
  * `resolve` with that other thenable.
  */
 Q.defer = defer;
-<span class="fstat-no" title="function not covered" >function defer() {</span>
+<span class="fstat-no" title="function not covered">function defer() {</span>
     // if "messages" is an "Array", that indicates that the promise has not yet
     // been resolved.  If it is "undefined", it has been resolved.  Each
     // element of the messages array is itself an array of complete arguments to
     // forward to the resolved promise.  We coerce the resolution value to a
     // promise using the `resolve` function because it handles both fully
     // non-thenable values and other thenables gracefully.
-<span class="cstat-no" title="statement not covered" >    var messages = [], progressListeners = [], resolvedPromise;</span>
+<span class="cstat-no" title="statement not covered">    var messages = [], progressListeners = [], resolvedPromise;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var deferred = object_create(defer.prototype);</span>
-<span class="cstat-no" title="statement not covered" >    var promise = object_create(Promise.prototype);</span>
+<span class="cstat-no" title="statement not covered">    var deferred = object_create(defer.prototype);</span>
+<span class="cstat-no" title="statement not covered">    var promise = object_create(Promise.prototype);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    promise.promiseDispatch = <span class="fstat-no" title="function not covered" >function (resolve, op, operands) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var args = array_slice(arguments);</span>
-<span class="cstat-no" title="statement not covered" >        if (messages) {</span>
-<span class="cstat-no" title="statement not covered" >            messages.push(args);</span>
-<span class="cstat-no" title="statement not covered" >            if (op === "when" &amp;&amp; operands[1]) { // progress operand</span>
-<span class="cstat-no" title="statement not covered" >                progressListeners.push(operands[1]);</span>
+<span class="cstat-no" title="statement not covered">    promise.promiseDispatch = <span class="fstat-no" title="function not covered">function (resolve, op, operands) {</span></span>
+<span class="cstat-no" title="statement not covered">        var args = array_slice(arguments);</span>
+<span class="cstat-no" title="statement not covered">        if (messages) {</span>
+<span class="cstat-no" title="statement not covered">            messages.push(args);</span>
+<span class="cstat-no" title="statement not covered">            if (op === "when" &amp;&amp; operands[1]) { // progress operand</span>
+<span class="cstat-no" title="statement not covered">                progressListeners.push(operands[1]);</span>
             }
         } else {
-<span class="cstat-no" title="statement not covered" >            Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                resolvedPromise.promiseDispatch.apply(resolvedPromise, args);</span>
+<span class="cstat-no" title="statement not covered">            Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                resolvedPromise.promiseDispatch.apply(resolvedPromise, args);</span>
             });
         }
     };
 &nbsp;
     // XXX deprecated
-<span class="cstat-no" title="statement not covered" >    promise.valueOf = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (messages) {</span>
-<span class="cstat-no" title="statement not covered" >            return promise;</span>
+<span class="cstat-no" title="statement not covered">    promise.valueOf = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        if (messages) {</span>
+<span class="cstat-no" title="statement not covered">            return promise;</span>
         }
-<span class="cstat-no" title="statement not covered" >        var nearerValue = nearer(resolvedPromise);</span>
-<span class="cstat-no" title="statement not covered" >        if (isPromise(nearerValue)) {</span>
-<span class="cstat-no" title="statement not covered" >            resolvedPromise = nearerValue; </span>// shorten chain
+<span class="cstat-no" title="statement not covered">        var nearerValue = nearer(resolvedPromise);</span>
+<span class="cstat-no" title="statement not covered">        if (isPromise(nearerValue)) {</span>
+<span class="cstat-no" title="statement not covered">            resolvedPromise = nearerValue; </span>// shorten chain
         }
-<span class="cstat-no" title="statement not covered" >        return nearerValue;</span>
+<span class="cstat-no" title="statement not covered">        return nearerValue;</span>
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    promise.inspect = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!resolvedPromise) {</span>
-<span class="cstat-no" title="statement not covered" >            return { state: "pending" };</span>
+<span class="cstat-no" title="statement not covered">    promise.inspect = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!resolvedPromise) {</span>
+<span class="cstat-no" title="statement not covered">            return { state: "pending" };</span>
         }
-<span class="cstat-no" title="statement not covered" >        return resolvedPromise.inspect();</span>
+<span class="cstat-no" title="statement not covered">        return resolvedPromise.inspect();</span>
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (Q.longStackSupport &amp;&amp; hasStacks) {</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error();</span>
+<span class="cstat-no" title="statement not covered">    if (Q.longStackSupport &amp;&amp; hasStacks) {</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            throw new Error();</span>
         } catch (e) {
             // NOTE: don't try to use `Error.captureStackTrace` or transfer the
             // accessor around; that causes memory leaks as per GH-111. Just
@@ -4965,8 +4963,8 @@ Q.defer = defer;
             //
             // At the same time, cut off the first line; it's always just
             // "[object Promise]\n", as per the `toString`.
-<span class="cstat-no" title="statement not covered" >            promise.stack = e.stack.substring(e.stack.indexOf("\n") + 1);</span>
-<span class="cstat-no" title="statement not covered" >            promise.stackCounter = longStackCounter++;</span>
+<span class="cstat-no" title="statement not covered">            promise.stack = e.stack.substring(e.stack.indexOf("\n") + 1);</span>
+<span class="cstat-no" title="statement not covered">            promise.stackCounter = longStackCounter++;</span>
         }
     }
 &nbsp;
@@ -4974,61 +4972,61 @@ Q.defer = defer;
     // consolidating them into `become`, since otherwise we'd create new
     // promises with the lines `become(whatever(value))`. See e.g. GH-252.
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function become(newPromise) {</span>
-<span class="cstat-no" title="statement not covered" >        resolvedPromise = newPromise;</span>
+<span class="fstat-no" title="function not covered">    function become(newPromise) {</span>
+<span class="cstat-no" title="statement not covered">        resolvedPromise = newPromise;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (Q.longStackSupport &amp;&amp; hasStacks) {</span>
+<span class="cstat-no" title="statement not covered">        if (Q.longStackSupport &amp;&amp; hasStacks) {</span>
             // Only hold a reference to the new promise if long stacks
             // are enabled to reduce memory usage
-<span class="cstat-no" title="statement not covered" >            promise.source = newPromise;</span>
+<span class="cstat-no" title="statement not covered">            promise.source = newPromise;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        array_reduce(messages, <span class="fstat-no" title="function not covered" >function (undefined, message) {</span></span>
-<span class="cstat-no" title="statement not covered" >            Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                newPromise.promiseDispatch.apply(newPromise, message);</span>
+<span class="cstat-no" title="statement not covered">        array_reduce(messages, <span class="fstat-no" title="function not covered">function (undefined, message) {</span></span>
+<span class="cstat-no" title="statement not covered">            Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                newPromise.promiseDispatch.apply(newPromise, message);</span>
             });
         }, void 0);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        messages = void 0;</span>
-<span class="cstat-no" title="statement not covered" >        progressListeners = void 0;</span>
+<span class="cstat-no" title="statement not covered">        messages = void 0;</span>
+<span class="cstat-no" title="statement not covered">        progressListeners = void 0;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    deferred.promise = promise;</span>
-<span class="cstat-no" title="statement not covered" >    deferred.resolve = <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (resolvedPromise) {</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered">    deferred.promise = promise;</span>
+<span class="cstat-no" title="statement not covered">    deferred.resolve = <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (resolvedPromise) {</span>
+<span class="cstat-no" title="statement not covered">            return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        become(Q(value));</span>
+<span class="cstat-no" title="statement not covered">        become(Q(value));</span>
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    deferred.fulfill = <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (resolvedPromise) {</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered">    deferred.fulfill = <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (resolvedPromise) {</span>
+<span class="cstat-no" title="statement not covered">            return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        become(fulfill(value));</span>
+<span class="cstat-no" title="statement not covered">        become(fulfill(value));</span>
     };
-<span class="cstat-no" title="statement not covered" >    deferred.reject = <span class="fstat-no" title="function not covered" >function (reason) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (resolvedPromise) {</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered">    deferred.reject = <span class="fstat-no" title="function not covered">function (reason) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (resolvedPromise) {</span>
+<span class="cstat-no" title="statement not covered">            return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        become(reject(reason));</span>
+<span class="cstat-no" title="statement not covered">        become(reject(reason));</span>
     };
-<span class="cstat-no" title="statement not covered" >    deferred.notify = <span class="fstat-no" title="function not covered" >function (progress) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (resolvedPromise) {</span>
-<span class="cstat-no" title="statement not covered" >            return;</span>
+<span class="cstat-no" title="statement not covered">    deferred.notify = <span class="fstat-no" title="function not covered">function (progress) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (resolvedPromise) {</span>
+<span class="cstat-no" title="statement not covered">            return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        array_reduce(progressListeners, <span class="fstat-no" title="function not covered" >function (undefined, progressListener) {</span></span>
-<span class="cstat-no" title="statement not covered" >            Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                progressListener(progress);</span>
+<span class="cstat-no" title="statement not covered">        array_reduce(progressListeners, <span class="fstat-no" title="function not covered">function (undefined, progressListener) {</span></span>
+<span class="cstat-no" title="statement not covered">            Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                progressListener(progress);</span>
             });
         }, void 0);
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return deferred;</span>
+<span class="cstat-no" title="statement not covered">    return deferred;</span>
 }
 &nbsp;
 /**
@@ -5036,15 +5034,15 @@ Q.defer = defer;
  * promise.
  * @returns a nodeback
  */
-defer.prototype.makeNodeResolver = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    var self = this;</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function (error, value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (error) {</span>
-<span class="cstat-no" title="statement not covered" >            self.reject(error);</span>
-        } else <span class="cstat-no" title="statement not covered" >if (arguments.length &gt; 2) {</span>
-<span class="cstat-no" title="statement not covered" >            self.resolve(array_slice(arguments, 1));</span>
+defer.prototype.makeNodeResolver = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    var self = this;</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function (error, value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (error) {</span>
+<span class="cstat-no" title="statement not covered">            self.reject(error);</span>
+        } else <span class="cstat-no" title="statement not covered">if (arguments.length &gt; 2) {</span>
+<span class="cstat-no" title="statement not covered">            self.resolve(array_slice(arguments, 1));</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            self.resolve(value);</span>
+<span class="cstat-no" title="statement not covered">            self.resolve(value);</span>
         }
     };
 };
@@ -5057,17 +5055,17 @@ defer.prototype.makeNodeResolver = <span class="fstat-no" title="function not co
  */
 Q.Promise = promise; // ES6
 Q.promise = promise;
-<span class="fstat-no" title="function not covered" >function promise(resolver) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof resolver !== "function") {</span>
-<span class="cstat-no" title="statement not covered" >        throw new TypeError("resolver must be a function.");</span>
+<span class="fstat-no" title="function not covered">function promise(resolver) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof resolver !== "function") {</span>
+<span class="cstat-no" title="statement not covered">        throw new TypeError("resolver must be a function.");</span>
     }
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        resolver(deferred.resolve, deferred.reject, deferred.notify);</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">        resolver(deferred.resolve, deferred.reject, deferred.notify);</span>
     } catch (reason) {
-<span class="cstat-no" title="statement not covered" >        deferred.reject(reason);</span>
+<span class="cstat-no" title="statement not covered">        deferred.reject(reason);</span>
     }
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 }
 &nbsp;
 promise.race = race; // ES6
@@ -5078,16 +5076,16 @@ promise.resolve = Q; // ES6
 // XXX experimental.  This method is a way to denote that a local value is
 // serializable and should be immediately dispatched to a remote upon request,
 // instead of passing a reference.
-Q.passByCopy = <span class="fstat-no" title="function not covered" >function (object) {</span>
+Q.passByCopy = <span class="fstat-no" title="function not covered">function (object) {</span>
     //freeze(object);
     //passByCopies.set(object, true);
-<span class="cstat-no" title="statement not covered" >    return object;</span>
+<span class="cstat-no" title="statement not covered">    return object;</span>
 };
 &nbsp;
-Promise.prototype.passByCopy = <span class="fstat-no" title="function not covered" >function () {</span>
+Promise.prototype.passByCopy = <span class="fstat-no" title="function not covered">function () {</span>
     //freeze(object);
     //passByCopies.set(object, true);
-<span class="cstat-no" title="statement not covered" >    return this;</span>
+<span class="cstat-no" title="statement not covered">    return this;</span>
 };
 &nbsp;
 /**
@@ -5099,17 +5097,17 @@ Promise.prototype.passByCopy = <span class="fstat-no" title="function not covere
  * otherwise.
  *
  */
-Q.join = <span class="fstat-no" title="function not covered" >function (x, y) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(x).join(y);</span>
+Q.join = <span class="fstat-no" title="function not covered">function (x, y) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(x).join(y);</span>
 };
 &nbsp;
-Promise.prototype.join = <span class="fstat-no" title="function not covered" >function (that) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q([this, that]).spread(<span class="fstat-no" title="function not covered" >function (x, y) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (x === y) {</span>
+Promise.prototype.join = <span class="fstat-no" title="function not covered">function (that) {</span>
+<span class="cstat-no" title="statement not covered">    return Q([this, that]).spread(<span class="fstat-no" title="function not covered">function (x, y) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (x === y) {</span>
             // TODO: "===" should be Object.is or equiv
-<span class="cstat-no" title="statement not covered" >            return x;</span>
+<span class="cstat-no" title="statement not covered">            return x;</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            throw new Error("Q can't join: not the same: " + x + " " + y);</span>
+<span class="cstat-no" title="statement not covered">            throw new Error("Q can't join: not the same: " + x + " " + y);</span>
         }
     });
 };
@@ -5120,21 +5118,21 @@ Promise.prototype.join = <span class="fstat-no" title="function not covered" >fu
  * @returns {Any*} the first promise to be settled
  */
 Q.race = race;
-<span class="fstat-no" title="function not covered" >function race(answerPs) {</span>
-<span class="cstat-no" title="statement not covered" >    return promise(<span class="fstat-no" title="function not covered" >function (resolve, reject) {</span></span>
+<span class="fstat-no" title="function not covered">function race(answerPs) {</span>
+<span class="cstat-no" title="statement not covered">    return promise(<span class="fstat-no" title="function not covered">function (resolve, reject) {</span></span>
         // Switch to this once we can assume at least ES5
         // answerPs.forEach(function (answerP) {
         //     Q(answerP).then(resolve, reject);
         // });
         // Use this in the meantime
-<span class="cstat-no" title="statement not covered" >        for (var i = 0, len = answerPs.length; i &lt; len; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            Q(answerPs[i]).then(resolve, reject);</span>
+<span class="cstat-no" title="statement not covered">        for (var i = 0, len = answerPs.length; i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered">            Q(answerPs[i]).then(resolve, reject);</span>
         }
     });
 }
 &nbsp;
-Promise.prototype.race = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(Q.race);</span>
+Promise.prototype.race = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(Q.race);</span>
 };
 &nbsp;
 /**
@@ -5149,137 +5147,137 @@ Promise.prototype.race = <span class="fstat-no" title="function not covered" >fu
  * bought and sold.
  */
 Q.makePromise = Promise;
-<span class="fstat-no" title="function not covered" >function Promise(descriptor, fallback, inspect) {</span>
-<span class="cstat-no" title="statement not covered" >    if (fallback === void 0) {</span>
-<span class="cstat-no" title="statement not covered" >        fallback = <span class="fstat-no" title="function not covered" >function (op) {</span></span>
-<span class="cstat-no" title="statement not covered" >            return reject(new Error(</span>
+<span class="fstat-no" title="function not covered">function Promise(descriptor, fallback, inspect) {</span>
+<span class="cstat-no" title="statement not covered">    if (fallback === void 0) {</span>
+<span class="cstat-no" title="statement not covered">        fallback = <span class="fstat-no" title="function not covered">function (op) {</span></span>
+<span class="cstat-no" title="statement not covered">            return reject(new Error(</span>
                 "Promise does not support operation: " + op
             ));
         };
     }
-<span class="cstat-no" title="statement not covered" >    if (inspect === void 0) {</span>
-<span class="cstat-no" title="statement not covered" >        inspect = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            return {state: "unknown"};</span>
+<span class="cstat-no" title="statement not covered">    if (inspect === void 0) {</span>
+<span class="cstat-no" title="statement not covered">        inspect = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            return {state: "unknown"};</span>
         };
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var promise = object_create(Promise.prototype);</span>
+<span class="cstat-no" title="statement not covered">    var promise = object_create(Promise.prototype);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    promise.promiseDispatch = <span class="fstat-no" title="function not covered" >function (resolve, op, args) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var result;</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            if (descriptor[op]) {</span>
-<span class="cstat-no" title="statement not covered" >                result = descriptor[op].apply(promise, args);</span>
+<span class="cstat-no" title="statement not covered">    promise.promiseDispatch = <span class="fstat-no" title="function not covered">function (resolve, op, args) {</span></span>
+<span class="cstat-no" title="statement not covered">        var result;</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            if (descriptor[op]) {</span>
+<span class="cstat-no" title="statement not covered">                result = descriptor[op].apply(promise, args);</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                result = fallback.call(promise, op, args);</span>
+<span class="cstat-no" title="statement not covered">                result = fallback.call(promise, op, args);</span>
             }
         } catch (exception) {
-<span class="cstat-no" title="statement not covered" >            result = reject(exception);</span>
+<span class="cstat-no" title="statement not covered">            result = reject(exception);</span>
         }
-<span class="cstat-no" title="statement not covered" >        if (resolve) {</span>
-<span class="cstat-no" title="statement not covered" >            resolve(result);</span>
+<span class="cstat-no" title="statement not covered">        if (resolve) {</span>
+<span class="cstat-no" title="statement not covered">            resolve(result);</span>
         }
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    promise.inspect = inspect;</span>
+<span class="cstat-no" title="statement not covered">    promise.inspect = inspect;</span>
 &nbsp;
     // XXX deprecated `valueOf` and `exception` support
-<span class="cstat-no" title="statement not covered" >    if (inspect) {</span>
-<span class="cstat-no" title="statement not covered" >        var inspected = inspect();</span>
-<span class="cstat-no" title="statement not covered" >        if (inspected.state === "rejected") {</span>
-<span class="cstat-no" title="statement not covered" >            promise.exception = inspected.reason;</span>
+<span class="cstat-no" title="statement not covered">    if (inspect) {</span>
+<span class="cstat-no" title="statement not covered">        var inspected = inspect();</span>
+<span class="cstat-no" title="statement not covered">        if (inspected.state === "rejected") {</span>
+<span class="cstat-no" title="statement not covered">            promise.exception = inspected.reason;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        promise.valueOf = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            var inspected = inspect();</span>
-<span class="cstat-no" title="statement not covered" >            if (inspected.state === "pending" ||</span>
+<span class="cstat-no" title="statement not covered">        promise.valueOf = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            var inspected = inspect();</span>
+<span class="cstat-no" title="statement not covered">            if (inspected.state === "pending" ||</span>
                 inspected.state === "rejected") {
-<span class="cstat-no" title="statement not covered" >                return promise;</span>
+<span class="cstat-no" title="statement not covered">                return promise;</span>
             }
-<span class="cstat-no" title="statement not covered" >            return inspected.value;</span>
+<span class="cstat-no" title="statement not covered">            return inspected.value;</span>
         };
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return promise;</span>
+<span class="cstat-no" title="statement not covered">    return promise;</span>
 }
 &nbsp;
-Promise.prototype.toString = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return "[object Promise]";</span>
+Promise.prototype.toString = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return "[object Promise]";</span>
 };
 &nbsp;
-Promise.prototype.then = <span class="fstat-no" title="function not covered" >function (fulfilled, rejected, progressed) {</span>
-<span class="cstat-no" title="statement not covered" >    var self = this;</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    var done = false; </span>  // ensure the untrusted promise makes at most a
+Promise.prototype.then = <span class="fstat-no" title="function not covered">function (fulfilled, rejected, progressed) {</span>
+<span class="cstat-no" title="statement not covered">    var self = this;</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    var done = false; </span>  // ensure the untrusted promise makes at most a
                         // single call to one of the callbacks
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function _fulfilled(value) {</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            return typeof fulfilled === "function" ? fulfilled(value) : value;</span>
+<span class="fstat-no" title="function not covered">    function _fulfilled(value) {</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            return typeof fulfilled === "function" ? fulfilled(value) : value;</span>
         } catch (exception) {
-<span class="cstat-no" title="statement not covered" >            return reject(exception);</span>
+<span class="cstat-no" title="statement not covered">            return reject(exception);</span>
         }
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function _rejected(exception) {</span>
-<span class="cstat-no" title="statement not covered" >        if (typeof rejected === "function") {</span>
-<span class="cstat-no" title="statement not covered" >            makeStackTraceLong(exception, self);</span>
-<span class="cstat-no" title="statement not covered" >            try {</span>
-<span class="cstat-no" title="statement not covered" >                return rejected(exception);</span>
+<span class="fstat-no" title="function not covered">    function _rejected(exception) {</span>
+<span class="cstat-no" title="statement not covered">        if (typeof rejected === "function") {</span>
+<span class="cstat-no" title="statement not covered">            makeStackTraceLong(exception, self);</span>
+<span class="cstat-no" title="statement not covered">            try {</span>
+<span class="cstat-no" title="statement not covered">                return rejected(exception);</span>
             } catch (newException) {
-<span class="cstat-no" title="statement not covered" >                return reject(newException);</span>
+<span class="cstat-no" title="statement not covered">                return reject(newException);</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        return reject(exception);</span>
+<span class="cstat-no" title="statement not covered">        return reject(exception);</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function _progressed(value) {</span>
-<span class="cstat-no" title="statement not covered" >        return typeof progressed === "function" ? progressed(value) : value;</span>
+<span class="fstat-no" title="function not covered">    function _progressed(value) {</span>
+<span class="cstat-no" title="statement not covered">        return typeof progressed === "function" ? progressed(value) : value;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        self.promiseDispatch(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >            if (done) {</span>
-<span class="cstat-no" title="statement not covered" >                return;</span>
+<span class="cstat-no" title="statement not covered">    Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        self.promiseDispatch(<span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">            if (done) {</span>
+<span class="cstat-no" title="statement not covered">                return;</span>
             }
-<span class="cstat-no" title="statement not covered" >            done = true;</span>
+<span class="cstat-no" title="statement not covered">            done = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            deferred.resolve(_fulfilled(value));</span>
-        }, "when", [<span class="fstat-no" title="function not covered" >function (exception) {</span>
-<span class="cstat-no" title="statement not covered" >            if (done) {</span>
-<span class="cstat-no" title="statement not covered" >                return;</span>
+<span class="cstat-no" title="statement not covered">            deferred.resolve(_fulfilled(value));</span>
+        }, "when", [<span class="fstat-no" title="function not covered">function (exception) {</span>
+<span class="cstat-no" title="statement not covered">            if (done) {</span>
+<span class="cstat-no" title="statement not covered">                return;</span>
             }
-<span class="cstat-no" title="statement not covered" >            done = true;</span>
+<span class="cstat-no" title="statement not covered">            done = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            deferred.resolve(_rejected(exception));</span>
+<span class="cstat-no" title="statement not covered">            deferred.resolve(_rejected(exception));</span>
         }]);
     });
 &nbsp;
     // Progress propagator need to be attached in the current tick.
-<span class="cstat-no" title="statement not covered" >    self.promiseDispatch(void 0, "when", [void 0, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var newValue;</span>
-<span class="cstat-no" title="statement not covered" >        var threw = false;</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            newValue = _progressed(value);</span>
+<span class="cstat-no" title="statement not covered">    self.promiseDispatch(void 0, "when", [void 0, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        var newValue;</span>
+<span class="cstat-no" title="statement not covered">        var threw = false;</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            newValue = _progressed(value);</span>
         } catch (e) {
-<span class="cstat-no" title="statement not covered" >            threw = true;</span>
-<span class="cstat-no" title="statement not covered" >            if (Q.onerror) {</span>
-<span class="cstat-no" title="statement not covered" >                Q.onerror(e);</span>
+<span class="cstat-no" title="statement not covered">            threw = true;</span>
+<span class="cstat-no" title="statement not covered">            if (Q.onerror) {</span>
+<span class="cstat-no" title="statement not covered">                Q.onerror(e);</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                throw e;</span>
+<span class="cstat-no" title="statement not covered">                throw e;</span>
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!threw) {</span>
-<span class="cstat-no" title="statement not covered" >            deferred.notify(newValue);</span>
+<span class="cstat-no" title="statement not covered">        if (!threw) {</span>
+<span class="cstat-no" title="statement not covered">            deferred.notify(newValue);</span>
         }
     }]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
-Q.tap = <span class="fstat-no" title="function not covered" >function (promise, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(promise).tap(callback);</span>
+Q.tap = <span class="fstat-no" title="function not covered">function (promise, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(promise).tap(callback);</span>
 };
 &nbsp;
 /**
@@ -5294,11 +5292,11 @@ Q.tap = <span class="fstat-no" title="function not covered" >function (promise, 
  *   .tap(console.log)
  *   .then(...);
  */
-Promise.prototype.tap = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >    callback = Q(callback);</span>
+Promise.prototype.tap = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">    callback = Q(callback);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return this.then(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return callback.fcall(value).thenResolve(value);</span>
+<span class="cstat-no" title="statement not covered">    return this.then(<span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        return callback.fcall(value).thenResolve(value);</span>
     });
 };
 &nbsp;
@@ -5319,24 +5317,24 @@ Promise.prototype.tap = <span class="fstat-no" title="function not covered" >fun
  * @return promise for the return value from the invoked callback
  */
 Q.when = when;
-<span class="fstat-no" title="function not covered" >function when(value, fulfilled, rejected, progressed) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(value).then(fulfilled, rejected, progressed);</span>
+<span class="fstat-no" title="function not covered">function when(value, fulfilled, rejected, progressed) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(value).then(fulfilled, rejected, progressed);</span>
 }
 &nbsp;
-Promise.prototype.thenResolve = <span class="fstat-no" title="function not covered" >function (value) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(<span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >return value; </span>});</span>
+Promise.prototype.thenResolve = <span class="fstat-no" title="function not covered">function (value) {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(<span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">return value; </span>});</span>
 };
 &nbsp;
-Q.thenResolve = <span class="fstat-no" title="function not covered" >function (promise, value) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(promise).thenResolve(value);</span>
+Q.thenResolve = <span class="fstat-no" title="function not covered">function (promise, value) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(promise).thenResolve(value);</span>
 };
 &nbsp;
-Promise.prototype.thenReject = <span class="fstat-no" title="function not covered" >function (reason) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(<span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >throw reason; </span>});</span>
+Promise.prototype.thenReject = <span class="fstat-no" title="function not covered">function (reason) {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(<span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">throw reason; </span>});</span>
 };
 &nbsp;
-Q.thenReject = <span class="fstat-no" title="function not covered" >function (promise, reason) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(promise).thenReject(reason);</span>
+Q.thenReject = <span class="fstat-no" title="function not covered">function (promise, reason) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(promise).thenReject(reason);</span>
 };
 &nbsp;
 /**
@@ -5351,14 +5349,14 @@ Q.thenReject = <span class="fstat-no" title="function not covered" >function (pr
 &nbsp;
 // XXX should we re-do this?
 Q.nearer = nearer;
-<span class="fstat-no" title="function not covered" >function nearer(value) {</span>
-<span class="cstat-no" title="statement not covered" >    if (isPromise(value)) {</span>
-<span class="cstat-no" title="statement not covered" >        var inspected = value.inspect();</span>
-<span class="cstat-no" title="statement not covered" >        if (inspected.state === "fulfilled") {</span>
-<span class="cstat-no" title="statement not covered" >            return inspected.value;</span>
+<span class="fstat-no" title="function not covered">function nearer(value) {</span>
+<span class="cstat-no" title="statement not covered">    if (isPromise(value)) {</span>
+<span class="cstat-no" title="statement not covered">        var inspected = value.inspect();</span>
+<span class="cstat-no" title="statement not covered">        if (inspected.state === "fulfilled") {</span>
+<span class="cstat-no" title="statement not covered">            return inspected.value;</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    return value;</span>
+<span class="cstat-no" title="statement not covered">    return value;</span>
 }
 &nbsp;
 /**
@@ -5366,13 +5364,13 @@ Q.nearer = nearer;
  * Otherwise it is a fulfilled value.
  */
 Q.isPromise = isPromise;
-<span class="fstat-no" title="function not covered" >function isPromise(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return object instanceof Promise;</span>
+<span class="fstat-no" title="function not covered">function isPromise(object) {</span>
+<span class="cstat-no" title="statement not covered">    return object instanceof Promise;</span>
 }
 &nbsp;
 Q.isPromiseAlike = isPromiseAlike;
-<span class="fstat-no" title="function not covered" >function isPromiseAlike(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return isObject(object) &amp;&amp; typeof object.then === "function";</span>
+<span class="fstat-no" title="function not covered">function isPromiseAlike(object) {</span>
+<span class="cstat-no" title="statement not covered">    return isObject(object) &amp;&amp; typeof object.then === "function";</span>
 }
 &nbsp;
 /**
@@ -5380,12 +5378,12 @@ Q.isPromiseAlike = isPromiseAlike;
  * fulfilled or rejected.
  */
 Q.isPending = isPending;
-<span class="fstat-no" title="function not covered" >function isPending(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return isPromise(object) &amp;&amp; object.inspect().state === "pending";</span>
+<span class="fstat-no" title="function not covered">function isPending(object) {</span>
+<span class="cstat-no" title="statement not covered">    return isPromise(object) &amp;&amp; object.inspect().state === "pending";</span>
 }
 &nbsp;
-Promise.prototype.isPending = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return this.inspect().state === "pending";</span>
+Promise.prototype.isPending = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return this.inspect().state === "pending";</span>
 };
 &nbsp;
 /**
@@ -5393,24 +5391,24 @@ Promise.prototype.isPending = <span class="fstat-no" title="function not covered
  * promise.
  */
 Q.isFulfilled = isFulfilled;
-<span class="fstat-no" title="function not covered" >function isFulfilled(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return !isPromise(object) || object.inspect().state === "fulfilled";</span>
+<span class="fstat-no" title="function not covered">function isFulfilled(object) {</span>
+<span class="cstat-no" title="statement not covered">    return !isPromise(object) || object.inspect().state === "fulfilled";</span>
 }
 &nbsp;
-Promise.prototype.isFulfilled = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return this.inspect().state === "fulfilled";</span>
+Promise.prototype.isFulfilled = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return this.inspect().state === "fulfilled";</span>
 };
 &nbsp;
 /**
  * @returns whether the given object is a rejected promise.
  */
 Q.isRejected = isRejected;
-<span class="fstat-no" title="function not covered" >function isRejected(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return isPromise(object) &amp;&amp; object.inspect().state === "rejected";</span>
+<span class="fstat-no" title="function not covered">function isRejected(object) {</span>
+<span class="cstat-no" title="statement not covered">    return isPromise(object) &amp;&amp; object.inspect().state === "rejected";</span>
 }
 &nbsp;
-Promise.prototype.isRejected = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return this.inspect().state === "rejected";</span>
+Promise.prototype.isRejected = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return this.inspect().state === "rejected";</span>
 };
 &nbsp;
 //// BEGIN UNHANDLED REJECTION TRACKING
@@ -5428,63 +5426,63 @@ function resetUnhandledRejections() {
     unhandledReasons.length = 0;
     unhandledRejections.length = 0;
 &nbsp;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!trackUnhandledRejections) {
-<span class="cstat-no" title="statement not covered" >        trackUnhandledRejections = true;</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (!trackUnhandledRejections) {
+<span class="cstat-no" title="statement not covered">        trackUnhandledRejections = true;</span>
     }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function trackRejection(promise, reason) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!trackUnhandledRejections) {</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="fstat-no" title="function not covered">function trackRejection(promise, reason) {</span>
+<span class="cstat-no" title="statement not covered">    if (!trackUnhandledRejections) {</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (typeof process === "object" &amp;&amp; typeof process.emit === "function") {</span>
-<span class="cstat-no" title="statement not covered" >        Q.nextTick.runAfter(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            if (array_indexOf(unhandledRejections, promise) !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >                process.emit("unhandledRejection", reason, promise);</span>
-<span class="cstat-no" title="statement not covered" >                reportedUnhandledRejections.push(promise);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof process === "object" &amp;&amp; typeof process.emit === "function") {</span>
+<span class="cstat-no" title="statement not covered">        Q.nextTick.runAfter(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            if (array_indexOf(unhandledRejections, promise) !== -1) {</span>
+<span class="cstat-no" title="statement not covered">                process.emit("unhandledRejection", reason, promise);</span>
+<span class="cstat-no" title="statement not covered">                reportedUnhandledRejections.push(promise);</span>
             }
         });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    unhandledRejections.push(promise);</span>
-<span class="cstat-no" title="statement not covered" >    if (reason &amp;&amp; typeof reason.stack !== "undefined") {</span>
-<span class="cstat-no" title="statement not covered" >        unhandledReasons.push(reason.stack);</span>
+<span class="cstat-no" title="statement not covered">    unhandledRejections.push(promise);</span>
+<span class="cstat-no" title="statement not covered">    if (reason &amp;&amp; typeof reason.stack !== "undefined") {</span>
+<span class="cstat-no" title="statement not covered">        unhandledReasons.push(reason.stack);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        unhandledReasons.push("(no stack) " + reason);</span>
+<span class="cstat-no" title="statement not covered">        unhandledReasons.push("(no stack) " + reason);</span>
     }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function untrackRejection(promise) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!trackUnhandledRejections) {</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="fstat-no" title="function not covered">function untrackRejection(promise) {</span>
+<span class="cstat-no" title="statement not covered">    if (!trackUnhandledRejections) {</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var at = array_indexOf(unhandledRejections, promise);</span>
-<span class="cstat-no" title="statement not covered" >    if (at !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >        if (typeof process === "object" &amp;&amp; typeof process.emit === "function") {</span>
-<span class="cstat-no" title="statement not covered" >            Q.nextTick.runAfter(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                var atReport = array_indexOf(reportedUnhandledRejections, promise);</span>
-<span class="cstat-no" title="statement not covered" >                if (atReport !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >                    process.emit("rejectionHandled", unhandledReasons[at], promise);</span>
-<span class="cstat-no" title="statement not covered" >                    reportedUnhandledRejections.splice(atReport, 1);</span>
+<span class="cstat-no" title="statement not covered">    var at = array_indexOf(unhandledRejections, promise);</span>
+<span class="cstat-no" title="statement not covered">    if (at !== -1) {</span>
+<span class="cstat-no" title="statement not covered">        if (typeof process === "object" &amp;&amp; typeof process.emit === "function") {</span>
+<span class="cstat-no" title="statement not covered">            Q.nextTick.runAfter(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                var atReport = array_indexOf(reportedUnhandledRejections, promise);</span>
+<span class="cstat-no" title="statement not covered">                if (atReport !== -1) {</span>
+<span class="cstat-no" title="statement not covered">                    process.emit("rejectionHandled", unhandledReasons[at], promise);</span>
+<span class="cstat-no" title="statement not covered">                    reportedUnhandledRejections.splice(atReport, 1);</span>
                 }
             });
         }
-<span class="cstat-no" title="statement not covered" >        unhandledRejections.splice(at, 1);</span>
-<span class="cstat-no" title="statement not covered" >        unhandledReasons.splice(at, 1);</span>
+<span class="cstat-no" title="statement not covered">        unhandledRejections.splice(at, 1);</span>
+<span class="cstat-no" title="statement not covered">        unhandledReasons.splice(at, 1);</span>
     }
 }
 &nbsp;
 Q.resetUnhandledRejections = resetUnhandledRejections;
 &nbsp;
-Q.getUnhandledReasons = <span class="fstat-no" title="function not covered" >function () {</span>
+Q.getUnhandledReasons = <span class="fstat-no" title="function not covered">function () {</span>
     // Make a copy so that consumers can't interfere with our internal state.
-<span class="cstat-no" title="statement not covered" >    return unhandledReasons.slice();</span>
+<span class="cstat-no" title="statement not covered">    return unhandledReasons.slice();</span>
 };
 &nbsp;
-Q.stopUnhandledRejectionTracking = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    resetUnhandledRejections();</span>
-<span class="cstat-no" title="statement not covered" >    trackUnhandledRejections = false;</span>
+Q.stopUnhandledRejectionTracking = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    resetUnhandledRejections();</span>
+<span class="cstat-no" title="statement not covered">    trackUnhandledRejections = false;</span>
 };
 &nbsp;
 resetUnhandledRejections();
@@ -5496,25 +5494,25 @@ resetUnhandledRejections();
  * @param reason value describing the failure
  */
 Q.reject = reject;
-<span class="fstat-no" title="function not covered" >function reject(reason) {</span>
-<span class="cstat-no" title="statement not covered" >    var rejection = Promise({</span>
-        "when": <span class="fstat-no" title="function not covered" >function (rejected) {</span>
+<span class="fstat-no" title="function not covered">function reject(reason) {</span>
+<span class="cstat-no" title="statement not covered">    var rejection = Promise({</span>
+        "when": <span class="fstat-no" title="function not covered">function (rejected) {</span>
             // note that the error has been handled
-<span class="cstat-no" title="statement not covered" >            if (rejected) {</span>
-<span class="cstat-no" title="statement not covered" >                untrackRejection(this);</span>
+<span class="cstat-no" title="statement not covered">            if (rejected) {</span>
+<span class="cstat-no" title="statement not covered">                untrackRejection(this);</span>
             }
-<span class="cstat-no" title="statement not covered" >            return rejected ? rejected(reason) : this;</span>
+<span class="cstat-no" title="statement not covered">            return rejected ? rejected(reason) : this;</span>
         }
-    }, <span class="fstat-no" title="function not covered" >function fallback() {</span>
-<span class="cstat-no" title="statement not covered" >        return this;</span>
-    }, <span class="fstat-no" title="function not covered" >function inspect() {</span>
-<span class="cstat-no" title="statement not covered" >        return { state: "rejected", reason: reason };</span>
+    }, <span class="fstat-no" title="function not covered">function fallback() {</span>
+<span class="cstat-no" title="statement not covered">        return this;</span>
+    }, <span class="fstat-no" title="function not covered">function inspect() {</span>
+<span class="cstat-no" title="statement not covered">        return { state: "rejected", reason: reason };</span>
     });
 &nbsp;
     // Note that the reason has not been handled.
-<span class="cstat-no" title="statement not covered" >    trackRejection(rejection, reason);</span>
+<span class="cstat-no" title="statement not covered">    trackRejection(rejection, reason);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return rejection;</span>
+<span class="cstat-no" title="statement not covered">    return rejection;</span>
 }
 &nbsp;
 /**
@@ -5522,37 +5520,37 @@ Q.reject = reject;
  * @param value immediate reference
  */
 Q.fulfill = fulfill;
-<span class="fstat-no" title="function not covered" >function fulfill(value) {</span>
-<span class="cstat-no" title="statement not covered" >    return Promise({</span>
-        "when": <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >            return value;</span>
+<span class="fstat-no" title="function not covered">function fulfill(value) {</span>
+<span class="cstat-no" title="statement not covered">    return Promise({</span>
+        "when": <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">            return value;</span>
         },
-        "get": <span class="fstat-no" title="function not covered" >function (name) {</span>
-<span class="cstat-no" title="statement not covered" >            return value[name];</span>
+        "get": <span class="fstat-no" title="function not covered">function (name) {</span>
+<span class="cstat-no" title="statement not covered">            return value[name];</span>
         },
-        "set": <span class="fstat-no" title="function not covered" >function (name, rhs) {</span>
-<span class="cstat-no" title="statement not covered" >            value[name] = rhs;</span>
+        "set": <span class="fstat-no" title="function not covered">function (name, rhs) {</span>
+<span class="cstat-no" title="statement not covered">            value[name] = rhs;</span>
         },
-        "delete": <span class="fstat-no" title="function not covered" >function (name) {</span>
-<span class="cstat-no" title="statement not covered" >            delete value[name];</span>
+        "delete": <span class="fstat-no" title="function not covered">function (name) {</span>
+<span class="cstat-no" title="statement not covered">            delete value[name];</span>
         },
-        "post": <span class="fstat-no" title="function not covered" >function (name, args) {</span>
+        "post": <span class="fstat-no" title="function not covered">function (name, args) {</span>
             // Mark Miller proposes that post with no name should apply a
             // promised function.
-<span class="cstat-no" title="statement not covered" >            if (name === null || name === void 0) {</span>
-<span class="cstat-no" title="statement not covered" >                return value.apply(void 0, args);</span>
+<span class="cstat-no" title="statement not covered">            if (name === null || name === void 0) {</span>
+<span class="cstat-no" title="statement not covered">                return value.apply(void 0, args);</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                return value[name].apply(value, args);</span>
+<span class="cstat-no" title="statement not covered">                return value[name].apply(value, args);</span>
             }
         },
-        "apply": <span class="fstat-no" title="function not covered" >function (thisp, args) {</span>
-<span class="cstat-no" title="statement not covered" >            return value.apply(thisp, args);</span>
+        "apply": <span class="fstat-no" title="function not covered">function (thisp, args) {</span>
+<span class="cstat-no" title="statement not covered">            return value.apply(thisp, args);</span>
         },
-        "keys": <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >            return object_keys(value);</span>
+        "keys": <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">            return object_keys(value);</span>
         }
-    }, void 0, <span class="fstat-no" title="function not covered" >function inspect() {</span>
-<span class="cstat-no" title="statement not covered" >        return { state: "fulfilled", value: value };</span>
+    }, void 0, <span class="fstat-no" title="function not covered">function inspect() {</span>
+<span class="cstat-no" title="statement not covered">        return { state: "fulfilled", value: value };</span>
     });
 }
 &nbsp;
@@ -5561,16 +5559,16 @@ Q.fulfill = fulfill;
  * @param promise thenable promise
  * @returns a Q promise
  */
-<span class="fstat-no" title="function not covered" >function coerce(promise) {</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            promise.then(deferred.resolve, deferred.reject, deferred.notify);</span>
+<span class="fstat-no" title="function not covered">function coerce(promise) {</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            promise.then(deferred.resolve, deferred.reject, deferred.notify);</span>
         } catch (exception) {
-<span class="cstat-no" title="statement not covered" >            deferred.reject(exception);</span>
+<span class="cstat-no" title="statement not covered">            deferred.reject(exception);</span>
         }
     });
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 }
 &nbsp;
 /**
@@ -5583,13 +5581,13 @@ Q.fulfill = fulfill;
  * without a rejection.
  */
 Q.master = master;
-<span class="fstat-no" title="function not covered" >function master(object) {</span>
-<span class="cstat-no" title="statement not covered" >    return Promise({</span>
-        "isDef": <span class="fstat-no" title="function not covered" >function () {</span>}
-    }, <span class="fstat-no" title="function not covered" >function fallback(op, args) {</span>
-<span class="cstat-no" title="statement not covered" >        return dispatch(object, op, args);</span>
-    }, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        return Q(object).inspect();</span>
+<span class="fstat-no" title="function not covered">function master(object) {</span>
+<span class="cstat-no" title="statement not covered">    return Promise({</span>
+        "isDef": <span class="fstat-no" title="function not covered">function () {</span>}
+    }, <span class="fstat-no" title="function not covered">function fallback(op, args) {</span>
+<span class="cstat-no" title="statement not covered">        return dispatch(object, op, args);</span>
+    }, <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">        return Q(object).inspect();</span>
     });
 }
 &nbsp;
@@ -5604,13 +5602,13 @@ Q.master = master;
  * either callback.
  */
 Q.spread = spread;
-<span class="fstat-no" title="function not covered" >function spread(value, fulfilled, rejected) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(value).spread(fulfilled, rejected);</span>
+<span class="fstat-no" title="function not covered">function spread(value, fulfilled, rejected) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(value).spread(fulfilled, rejected);</span>
 }
 &nbsp;
-Promise.prototype.spread = <span class="fstat-no" title="function not covered" >function (fulfilled, rejected) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.all().then(<span class="fstat-no" title="function not covered" >function (array) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return fulfilled.apply(void 0, array);</span>
+Promise.prototype.spread = <span class="fstat-no" title="function not covered">function (fulfilled, rejected) {</span>
+<span class="cstat-no" title="statement not covered">    return this.all().then(<span class="fstat-no" title="function not covered">function (array) {</span></span>
+<span class="cstat-no" title="statement not covered">        return fulfilled.apply(void 0, array);</span>
     }, rejected);
 };
 &nbsp;
@@ -5641,12 +5639,12 @@ Promise.prototype.spread = <span class="fstat-no" title="function not covered" >
  *    rejection for the promise returned by the decorated generator.
  */
 Q.async = async;
-<span class="fstat-no" title="function not covered" >function async(makeGenerator) {</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="fstat-no" title="function not covered">function async(makeGenerator) {</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function () {</span></span>
         // when verb is "send", arg is a value
         // when verb is "throw", arg is an exception
-<span class="fstat-no" title="function not covered" >        function continuer(verb, arg) {</span>
-<span class="cstat-no" title="statement not covered" >            var result;</span>
+<span class="fstat-no" title="function not covered">        function continuer(verb, arg) {</span>
+<span class="cstat-no" title="statement not covered">            var result;</span>
 &nbsp;
             // Until V8 3.19 / Chromium 29 is released, SpiderMonkey is the only
             // engine that has a deployed base of browsers that support generators.
@@ -5656,37 +5654,37 @@ Q.async = async;
             // we also support Python-style generators.  At some point we can remove
             // this block.
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (typeof StopIteration === "undefined") {</span>
+<span class="cstat-no" title="statement not covered">            if (typeof StopIteration === "undefined") {</span>
                 // ES6 Generators
-<span class="cstat-no" title="statement not covered" >                try {</span>
-<span class="cstat-no" title="statement not covered" >                    result = generator[verb](arg);</span>
+<span class="cstat-no" title="statement not covered">                try {</span>
+<span class="cstat-no" title="statement not covered">                    result = generator[verb](arg);</span>
                 } catch (exception) {
-<span class="cstat-no" title="statement not covered" >                    return reject(exception);</span>
+<span class="cstat-no" title="statement not covered">                    return reject(exception);</span>
                 }
-<span class="cstat-no" title="statement not covered" >                if (result.done) {</span>
-<span class="cstat-no" title="statement not covered" >                    return Q(result.value);</span>
+<span class="cstat-no" title="statement not covered">                if (result.done) {</span>
+<span class="cstat-no" title="statement not covered">                    return Q(result.value);</span>
                 } else {
-<span class="cstat-no" title="statement not covered" >                    return when(result.value, callback, errback);</span>
+<span class="cstat-no" title="statement not covered">                    return when(result.value, callback, errback);</span>
                 }
             } else {
                 // SpiderMonkey Generators
                 // FIXME: Remove this case when SM does ES6 generators.
-<span class="cstat-no" title="statement not covered" >                try {</span>
-<span class="cstat-no" title="statement not covered" >                    result = generator[verb](arg);</span>
+<span class="cstat-no" title="statement not covered">                try {</span>
+<span class="cstat-no" title="statement not covered">                    result = generator[verb](arg);</span>
                 } catch (exception) {
-<span class="cstat-no" title="statement not covered" >                    if (isStopIteration(exception)) {</span>
-<span class="cstat-no" title="statement not covered" >                        return Q(exception.value);</span>
+<span class="cstat-no" title="statement not covered">                    if (isStopIteration(exception)) {</span>
+<span class="cstat-no" title="statement not covered">                        return Q(exception.value);</span>
                     } else {
-<span class="cstat-no" title="statement not covered" >                        return reject(exception);</span>
+<span class="cstat-no" title="statement not covered">                        return reject(exception);</span>
                     }
                 }
-<span class="cstat-no" title="statement not covered" >                return when(result, callback, errback);</span>
+<span class="cstat-no" title="statement not covered">                return when(result, callback, errback);</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        var generator = makeGenerator.apply(this, arguments);</span>
-<span class="cstat-no" title="statement not covered" >        var callback = continuer.bind(continuer, "next");</span>
-<span class="cstat-no" title="statement not covered" >        var errback = continuer.bind(continuer, "throw");</span>
-<span class="cstat-no" title="statement not covered" >        return callback();</span>
+<span class="cstat-no" title="statement not covered">        var generator = makeGenerator.apply(this, arguments);</span>
+<span class="cstat-no" title="statement not covered">        var callback = continuer.bind(continuer, "next");</span>
+<span class="cstat-no" title="statement not covered">        var errback = continuer.bind(continuer, "throw");</span>
+<span class="cstat-no" title="statement not covered">        return callback();</span>
     };
 }
 &nbsp;
@@ -5698,8 +5696,8 @@ Q.async = async;
  * generators at the top-level to work with libraries.
  */
 Q.spawn = spawn;
-<span class="fstat-no" title="function not covered" >function spawn(makeGenerator) {</span>
-<span class="cstat-no" title="statement not covered" >    Q.done(Q.async(makeGenerator)());</span>
+<span class="fstat-no" title="function not covered">function spawn(makeGenerator) {</span>
+<span class="cstat-no" title="statement not covered">    Q.done(Q.async(makeGenerator)());</span>
 }
 &nbsp;
 // FIXME: Remove this interface once ES6 generators are in SpiderMonkey.
@@ -5728,8 +5726,8 @@ Q.spawn = spawn;
  * })
  */
 Q["return"] = _return;
-<span class="fstat-no" title="function not covered" >function _return(value) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new QReturnValue(value);</span>
+<span class="fstat-no" title="function not covered">function _return(value) {</span>
+<span class="cstat-no" title="statement not covered">    throw new QReturnValue(value);</span>
 }
 &nbsp;
 /**
@@ -5748,10 +5746,10 @@ Q["return"] = _return;
  * @returns {function} a function that has been decorated.
  */
 Q.promised = promised;
-<span class="fstat-no" title="function not covered" >function promised(callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        return spread([this, all(arguments)], <span class="fstat-no" title="function not covered" >function (self, args) {</span></span>
-<span class="cstat-no" title="statement not covered" >            return callback.apply(self, args);</span>
+<span class="fstat-no" title="function not covered">function promised(callback) {</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        return spread([this, all(arguments)], <span class="fstat-no" title="function not covered">function (self, args) {</span></span>
+<span class="cstat-no" title="statement not covered">            return callback.apply(self, args);</span>
         });
     };
 }
@@ -5764,17 +5762,17 @@ Q.promised = promised;
  * @returns result {Promise} a promise for the result of the operation
  */
 Q.dispatch = dispatch;
-<span class="fstat-no" title="function not covered" >function dispatch(object, op, args) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch(op, args);</span>
+<span class="fstat-no" title="function not covered">function dispatch(object, op, args) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch(op, args);</span>
 }
 &nbsp;
-Promise.prototype.dispatch = <span class="fstat-no" title="function not covered" >function (op, args) {</span>
-<span class="cstat-no" title="statement not covered" >    var self = this;</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        self.promiseDispatch(deferred.resolve, op, args);</span>
+Promise.prototype.dispatch = <span class="fstat-no" title="function not covered">function (op, args) {</span>
+<span class="cstat-no" title="statement not covered">    var self = this;</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        self.promiseDispatch(deferred.resolve, op, args);</span>
     });
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 /**
@@ -5783,12 +5781,12 @@ Promise.prototype.dispatch = <span class="fstat-no" title="function not covered"
  * @param name      name of property to get
  * @return promise for the property value
  */
-Q.get = <span class="fstat-no" title="function not covered" >function (object, key) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("get", [key]);</span>
+Q.get = <span class="fstat-no" title="function not covered">function (object, key) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("get", [key]);</span>
 };
 &nbsp;
-Promise.prototype.get = <span class="fstat-no" title="function not covered" >function (key) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("get", [key]);</span>
+Promise.prototype.get = <span class="fstat-no" title="function not covered">function (key) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("get", [key]);</span>
 };
 &nbsp;
 /**
@@ -5798,12 +5796,12 @@ Promise.prototype.get = <span class="fstat-no" title="function not covered" >fun
  * @param value     new value of property
  * @return promise for the return value
  */
-Q.set = <span class="fstat-no" title="function not covered" >function (object, key, value) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("set", [key, value]);</span>
+Q.set = <span class="fstat-no" title="function not covered">function (object, key, value) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("set", [key, value]);</span>
 };
 &nbsp;
-Promise.prototype.set = <span class="fstat-no" title="function not covered" >function (key, value) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("set", [key, value]);</span>
+Promise.prototype.set = <span class="fstat-no" title="function not covered">function (key, value) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("set", [key, value]);</span>
 };
 &nbsp;
 /**
@@ -5813,13 +5811,13 @@ Promise.prototype.set = <span class="fstat-no" title="function not covered" >fun
  * @return promise for the return value
  */
 Q.del = // XXX legacy
-Q["delete"] = <span class="fstat-no" title="function not covered" >function (object, key) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("delete", [key]);</span>
+Q["delete"] = <span class="fstat-no" title="function not covered">function (object, key) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("delete", [key]);</span>
 };
 &nbsp;
 Promise.prototype.del = // XXX legacy
-Promise.prototype["delete"] = <span class="fstat-no" title="function not covered" >function (key) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("delete", [key]);</span>
+Promise.prototype["delete"] = <span class="fstat-no" title="function not covered">function (key) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("delete", [key]);</span>
 };
 &nbsp;
 /**
@@ -5836,13 +5834,13 @@ Promise.prototype["delete"] = <span class="fstat-no" title="function not covered
  */
 // bound locally because it is used by other methods
 Q.mapply = // XXX As proposed by "Redsandro"
-Q.post = <span class="fstat-no" title="function not covered" >function (object, name, args) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("post", [name, args]);</span>
+Q.post = <span class="fstat-no" title="function not covered">function (object, name, args) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("post", [name, args]);</span>
 };
 &nbsp;
 Promise.prototype.mapply = // XXX As proposed by "Redsandro"
-Promise.prototype.post = <span class="fstat-no" title="function not covered" >function (name, args) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("post", [name, args]);</span>
+Promise.prototype.post = <span class="fstat-no" title="function not covered">function (name, args) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("post", [name, args]);</span>
 };
 &nbsp;
 /**
@@ -5854,14 +5852,14 @@ Promise.prototype.post = <span class="fstat-no" title="function not covered" >fu
  */
 Q.send = // XXX Mark Miller's proposed parlance
 Q.mcall = // XXX As proposed by "Redsandro"
-Q.invoke = <span class="fstat-no" title="function not covered" >function (object, name /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("post", [name, array_slice(arguments, 2)]);</span>
+Q.invoke = <span class="fstat-no" title="function not covered">function (object, name /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("post", [name, array_slice(arguments, 2)]);</span>
 };
 &nbsp;
 Promise.prototype.send = // XXX Mark Miller's proposed parlance
 Promise.prototype.mcall = // XXX As proposed by "Redsandro"
-Promise.prototype.invoke = <span class="fstat-no" title="function not covered" >function (name /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("post", [name, array_slice(arguments, 1)]);</span>
+Promise.prototype.invoke = <span class="fstat-no" title="function not covered">function (name /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("post", [name, array_slice(arguments, 1)]);</span>
 };
 &nbsp;
 /**
@@ -5869,12 +5867,12 @@ Promise.prototype.invoke = <span class="fstat-no" title="function not covered" >
  * @param object    promise or immediate reference for target function
  * @param args      array of application arguments
  */
-Q.fapply = <span class="fstat-no" title="function not covered" >function (object, args) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("apply", [void 0, args]);</span>
+Q.fapply = <span class="fstat-no" title="function not covered">function (object, args) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("apply", [void 0, args]);</span>
 };
 &nbsp;
-Promise.prototype.fapply = <span class="fstat-no" title="function not covered" >function (args) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("apply", [void 0, args]);</span>
+Promise.prototype.fapply = <span class="fstat-no" title="function not covered">function (args) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("apply", [void 0, args]);</span>
 };
 &nbsp;
 /**
@@ -5883,12 +5881,12 @@ Promise.prototype.fapply = <span class="fstat-no" title="function not covered" >
  * @param ...args   array of application arguments
  */
 Q["try"] =
-Q.fcall = <span class="fstat-no" title="function not covered" >function (object /* ...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("apply", [void 0, array_slice(arguments, 1)]);</span>
+Q.fcall = <span class="fstat-no" title="function not covered">function (object /* ...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("apply", [void 0, array_slice(arguments, 1)]);</span>
 };
 &nbsp;
-Promise.prototype.fcall = <span class="fstat-no" title="function not covered" >function (/*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("apply", [void 0, array_slice(arguments)]);</span>
+Promise.prototype.fcall = <span class="fstat-no" title="function not covered">function (/*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("apply", [void 0, array_slice(arguments)]);</span>
 };
 &nbsp;
 /**
@@ -5897,21 +5895,21 @@ Promise.prototype.fcall = <span class="fstat-no" title="function not covered" >f
  * @param object    promise or immediate reference for target function
  * @param ...args   array of application arguments
  */
-Q.fbind = <span class="fstat-no" title="function not covered" >function (object /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var promise = Q(object);</span>
-<span class="cstat-no" title="statement not covered" >    var args = array_slice(arguments, 1);</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function fbound() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return promise.dispatch("apply", [</span>
+Q.fbind = <span class="fstat-no" title="function not covered">function (object /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var promise = Q(object);</span>
+<span class="cstat-no" title="statement not covered">    var args = array_slice(arguments, 1);</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function fbound() {</span></span>
+<span class="cstat-no" title="statement not covered">        return promise.dispatch("apply", [</span>
             this,
             args.concat(array_slice(arguments))
         ]);
     };
 };
-Promise.prototype.fbind = <span class="fstat-no" title="function not covered" >function (/*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var promise = this;</span>
-<span class="cstat-no" title="statement not covered" >    var args = array_slice(arguments);</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function fbound() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return promise.dispatch("apply", [</span>
+Promise.prototype.fbind = <span class="fstat-no" title="function not covered">function (/*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var promise = this;</span>
+<span class="cstat-no" title="statement not covered">    var args = array_slice(arguments);</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function fbound() {</span></span>
+<span class="cstat-no" title="statement not covered">        return promise.dispatch("apply", [</span>
             this,
             args.concat(array_slice(arguments))
         ]);
@@ -5924,12 +5922,12 @@ Promise.prototype.fbind = <span class="fstat-no" title="function not covered" >f
  * @param object    promise or immediate reference for target object
  * @return promise for the keys of the eventually settled object
  */
-Q.keys = <span class="fstat-no" title="function not covered" >function (object) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).dispatch("keys", []);</span>
+Q.keys = <span class="fstat-no" title="function not covered">function (object) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).dispatch("keys", []);</span>
 };
 &nbsp;
-Promise.prototype.keys = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return this.dispatch("keys", []);</span>
+Promise.prototype.keys = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return this.dispatch("keys", []);</span>
 };
 &nbsp;
 /**
@@ -5942,43 +5940,43 @@ Promise.prototype.keys = <span class="fstat-no" title="function not covered" >fu
 // By Mark Miller
 // http://wiki.ecmascript.org/doku.php?id=strawman:concurrency&amp;rev=1308776521#allfulfilled
 Q.all = all;
-<span class="fstat-no" title="function not covered" >function all(promises) {</span>
-<span class="cstat-no" title="statement not covered" >    return when(promises, <span class="fstat-no" title="function not covered" >function (promises) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var pendingCount = 0;</span>
-<span class="cstat-no" title="statement not covered" >        var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >        array_reduce(promises, <span class="fstat-no" title="function not covered" >function (undefined, promise, index) {</span></span>
-<span class="cstat-no" title="statement not covered" >            var snapshot;</span>
-<span class="cstat-no" title="statement not covered" >            if (</span>
+<span class="fstat-no" title="function not covered">function all(promises) {</span>
+<span class="cstat-no" title="statement not covered">    return when(promises, <span class="fstat-no" title="function not covered">function (promises) {</span></span>
+<span class="cstat-no" title="statement not covered">        var pendingCount = 0;</span>
+<span class="cstat-no" title="statement not covered">        var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">        array_reduce(promises, <span class="fstat-no" title="function not covered">function (undefined, promise, index) {</span></span>
+<span class="cstat-no" title="statement not covered">            var snapshot;</span>
+<span class="cstat-no" title="statement not covered">            if (</span>
                 isPromise(promise) &amp;&amp;
                 (snapshot = promise.inspect()).state === "fulfilled"
             ) {
-<span class="cstat-no" title="statement not covered" >                promises[index] = snapshot.value;</span>
+<span class="cstat-no" title="statement not covered">                promises[index] = snapshot.value;</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                ++pendingCount;</span>
-<span class="cstat-no" title="statement not covered" >                when(</span>
+<span class="cstat-no" title="statement not covered">                ++pendingCount;</span>
+<span class="cstat-no" title="statement not covered">                when(</span>
                     promise,
-<span class="fstat-no" title="function not covered" >                    function (value) {</span>
-<span class="cstat-no" title="statement not covered" >                        promises[index] = value;</span>
-<span class="cstat-no" title="statement not covered" >                        if (--pendingCount === 0) {</span>
-<span class="cstat-no" title="statement not covered" >                            deferred.resolve(promises);</span>
+<span class="fstat-no" title="function not covered">                    function (value) {</span>
+<span class="cstat-no" title="statement not covered">                        promises[index] = value;</span>
+<span class="cstat-no" title="statement not covered">                        if (--pendingCount === 0) {</span>
+<span class="cstat-no" title="statement not covered">                            deferred.resolve(promises);</span>
                         }
                     },
                     deferred.reject,
-<span class="fstat-no" title="function not covered" >                    function (progress) {</span>
-<span class="cstat-no" title="statement not covered" >                        deferred.notify({ index: index, value: progress });</span>
+<span class="fstat-no" title="function not covered">                    function (progress) {</span>
+<span class="cstat-no" title="statement not covered">                        deferred.notify({ index: index, value: progress });</span>
                     }
                 );
             }
         }, void 0);
-<span class="cstat-no" title="statement not covered" >        if (pendingCount === 0) {</span>
-<span class="cstat-no" title="statement not covered" >            deferred.resolve(promises);</span>
+<span class="cstat-no" title="statement not covered">        if (pendingCount === 0) {</span>
+<span class="cstat-no" title="statement not covered">            deferred.resolve(promises);</span>
         }
-<span class="cstat-no" title="statement not covered" >        return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">        return deferred.promise;</span>
     });
 }
 &nbsp;
-Promise.prototype.all = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return all(this);</span>
+Promise.prototype.all = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return all(this);</span>
 };
 &nbsp;
 /**
@@ -5990,43 +5988,43 @@ Promise.prototype.all = <span class="fstat-no" title="function not covered" >fun
  */
 Q.any = any;
 &nbsp;
-<span class="fstat-no" title="function not covered" >function any(promises) {</span>
-<span class="cstat-no" title="statement not covered" >    if (promises.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >        return Q.resolve();</span>
+<span class="fstat-no" title="function not covered">function any(promises) {</span>
+<span class="cstat-no" title="statement not covered">    if (promises.length === 0) {</span>
+<span class="cstat-no" title="statement not covered">        return Q.resolve();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var deferred = Q.defer();</span>
-<span class="cstat-no" title="statement not covered" >    var pendingCount = 0;</span>
-<span class="cstat-no" title="statement not covered" >    array_reduce(promises, <span class="fstat-no" title="function not covered" >function (prev, current, index) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var promise = promises[index];</span>
+<span class="cstat-no" title="statement not covered">    var deferred = Q.defer();</span>
+<span class="cstat-no" title="statement not covered">    var pendingCount = 0;</span>
+<span class="cstat-no" title="statement not covered">    array_reduce(promises, <span class="fstat-no" title="function not covered">function (prev, current, index) {</span></span>
+<span class="cstat-no" title="statement not covered">        var promise = promises[index];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        pendingCount++;</span>
+<span class="cstat-no" title="statement not covered">        pendingCount++;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        when(promise, onFulfilled, onRejected, onProgress);</span>
-<span class="fstat-no" title="function not covered" >        function onFulfilled(result) {</span>
-<span class="cstat-no" title="statement not covered" >            deferred.resolve(result);</span>
+<span class="cstat-no" title="statement not covered">        when(promise, onFulfilled, onRejected, onProgress);</span>
+<span class="fstat-no" title="function not covered">        function onFulfilled(result) {</span>
+<span class="cstat-no" title="statement not covered">            deferred.resolve(result);</span>
         }
-<span class="fstat-no" title="function not covered" >        function onRejected(err) {</span>
-<span class="cstat-no" title="statement not covered" >            pendingCount--;</span>
-<span class="cstat-no" title="statement not covered" >            if (pendingCount === 0) {</span>
-<span class="cstat-no" title="statement not covered" >                err.message = ("Q can't get fulfillment value from any promise, all " +</span>
+<span class="fstat-no" title="function not covered">        function onRejected(err) {</span>
+<span class="cstat-no" title="statement not covered">            pendingCount--;</span>
+<span class="cstat-no" title="statement not covered">            if (pendingCount === 0) {</span>
+<span class="cstat-no" title="statement not covered">                err.message = ("Q can't get fulfillment value from any promise, all " +</span>
                     "promises were rejected. Last error message: " + err.message);
-<span class="cstat-no" title="statement not covered" >                deferred.reject(err);</span>
+<span class="cstat-no" title="statement not covered">                deferred.reject(err);</span>
             }
         }
-<span class="fstat-no" title="function not covered" >        function onProgress(progress) {</span>
-<span class="cstat-no" title="statement not covered" >            deferred.notify({</span>
+<span class="fstat-no" title="function not covered">        function onProgress(progress) {</span>
+<span class="cstat-no" title="statement not covered">            deferred.notify({</span>
                 index: index,
                 value: progress
             });
         }
     }, undefined);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 }
 &nbsp;
-Promise.prototype.any = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return any(this);</span>
+Promise.prototype.any = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return any(this);</span>
 };
 &nbsp;
 /**
@@ -6039,27 +6037,27 @@ Promise.prototype.any = <span class="fstat-no" title="function not covered" >fun
  * @return a promise for an array of promises
  */
 Q.allResolved = deprecate(allResolved, "allResolved", "allSettled");
-<span class="fstat-no" title="function not covered" >function allResolved(promises) {</span>
-<span class="cstat-no" title="statement not covered" >    return when(promises, <span class="fstat-no" title="function not covered" >function (promises) {</span></span>
-<span class="cstat-no" title="statement not covered" >        promises = array_map(promises, Q);</span>
-<span class="cstat-no" title="statement not covered" >        return when(all(array_map(promises, <span class="fstat-no" title="function not covered" >function (promise) {</span></span>
-<span class="cstat-no" title="statement not covered" >            return when(promise, noop, noop);</span>
-        })), <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >            return promises;</span>
+<span class="fstat-no" title="function not covered">function allResolved(promises) {</span>
+<span class="cstat-no" title="statement not covered">    return when(promises, <span class="fstat-no" title="function not covered">function (promises) {</span></span>
+<span class="cstat-no" title="statement not covered">        promises = array_map(promises, Q);</span>
+<span class="cstat-no" title="statement not covered">        return when(all(array_map(promises, <span class="fstat-no" title="function not covered">function (promise) {</span></span>
+<span class="cstat-no" title="statement not covered">            return when(promise, noop, noop);</span>
+        })), <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">            return promises;</span>
         });
     });
 }
 &nbsp;
-Promise.prototype.allResolved = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return allResolved(this);</span>
+Promise.prototype.allResolved = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return allResolved(this);</span>
 };
 &nbsp;
 /**
  * @see Promise#allSettled
  */
 Q.allSettled = allSettled;
-<span class="fstat-no" title="function not covered" >function allSettled(promises) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(promises).allSettled();</span>
+<span class="fstat-no" title="function not covered">function allSettled(promises) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(promises).allSettled();</span>
 }
 &nbsp;
 /**
@@ -6069,14 +6067,14 @@ Q.allSettled = allSettled;
  * promises for values)
  * @returns {Array[State]} an array of states for the respective values.
  */
-Promise.prototype.allSettled = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(<span class="fstat-no" title="function not covered" >function (promises) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return all(array_map(promises, <span class="fstat-no" title="function not covered" >function (promise) {</span></span>
-<span class="cstat-no" title="statement not covered" >            promise = Q(promise);</span>
-<span class="fstat-no" title="function not covered" >            function regardless() {</span>
-<span class="cstat-no" title="statement not covered" >                return promise.inspect();</span>
+Promise.prototype.allSettled = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(<span class="fstat-no" title="function not covered">function (promises) {</span></span>
+<span class="cstat-no" title="statement not covered">        return all(array_map(promises, <span class="fstat-no" title="function not covered">function (promise) {</span></span>
+<span class="cstat-no" title="statement not covered">            promise = Q(promise);</span>
+<span class="fstat-no" title="function not covered">            function regardless() {</span>
+<span class="cstat-no" title="statement not covered">                return promise.inspect();</span>
             }
-<span class="cstat-no" title="statement not covered" >            return promise.then(regardless, regardless);</span>
+<span class="cstat-no" title="statement not covered">            return promise.then(regardless, regardless);</span>
         }));
     });
 };
@@ -6091,13 +6089,13 @@ Promise.prototype.allSettled = <span class="fstat-no" title="function not covere
  * @returns a promise for the return value of the callback
  */
 Q.fail = // XXX legacy
-Q["catch"] = <span class="fstat-no" title="function not covered" >function (object, rejected) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).then(void 0, rejected);</span>
+Q["catch"] = <span class="fstat-no" title="function not covered">function (object, rejected) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).then(void 0, rejected);</span>
 };
 &nbsp;
 Promise.prototype.fail = // XXX legacy
-Promise.prototype["catch"] = <span class="fstat-no" title="function not covered" >function (rejected) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(void 0, rejected);</span>
+Promise.prototype["catch"] = <span class="fstat-no" title="function not covered">function (rejected) {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(void 0, rejected);</span>
 };
 &nbsp;
 /**
@@ -6109,12 +6107,12 @@ Promise.prototype["catch"] = <span class="fstat-no" title="function not covered"
  * @returns the given promise, unchanged
  */
 Q.progress = progress;
-<span class="fstat-no" title="function not covered" >function progress(object, progressed) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).then(void 0, void 0, progressed);</span>
+<span class="fstat-no" title="function not covered">function progress(object, progressed) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).then(void 0, void 0, progressed);</span>
 }
 &nbsp;
-Promise.prototype.progress = <span class="fstat-no" title="function not covered" >function (progressed) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(void 0, void 0, progressed);</span>
+Promise.prototype.progress = <span class="fstat-no" title="function not covered">function (progressed) {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(void 0, void 0, progressed);</span>
 };
 &nbsp;
 /**
@@ -6129,24 +6127,24 @@ Promise.prototype.progress = <span class="fstat-no" title="function not covered"
  * ``fin`` is done.
  */
 Q.fin = // XXX legacy
-Q["finally"] = <span class="fstat-no" title="function not covered" >function (object, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object)["finally"](callback);</span>
+Q["finally"] = <span class="fstat-no" title="function not covered">function (object, callback) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object)["finally"](callback);</span>
 };
 &nbsp;
 Promise.prototype.fin = // XXX legacy
-Promise.prototype["finally"] = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!callback || typeof callback.apply !== "function") {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error("Q can't apply finally callback");</span>
+Promise.prototype["finally"] = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (!callback || typeof callback.apply !== "function") {</span>
+<span class="cstat-no" title="statement not covered">        throw new Error("Q can't apply finally callback");</span>
     }
-<span class="cstat-no" title="statement not covered" >    callback = Q(callback);</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return callback.fcall().then(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            return value;</span>
+<span class="cstat-no" title="statement not covered">    callback = Q(callback);</span>
+<span class="cstat-no" title="statement not covered">    return this.then(<span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        return callback.fcall().then(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            return value;</span>
         });
-    }, <span class="fstat-no" title="function not covered" >function (reason) {</span>
+    }, <span class="fstat-no" title="function not covered">function (reason) {</span>
         // TODO attempt to recycle the rejection with "this".
-<span class="cstat-no" title="statement not covered" >        return callback.fcall().then(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            throw reason;</span>
+<span class="cstat-no" title="statement not covered">        return callback.fcall().then(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            throw reason;</span>
         });
     });
 };
@@ -6157,34 +6155,34 @@ Promise.prototype["finally"] = <span class="fstat-no" title="function not covere
  * @param {Any*} promise at the end of a chain of promises
  * @returns nothing
  */
-Q.done = <span class="fstat-no" title="function not covered" >function (object, fulfilled, rejected, progress) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).done(fulfilled, rejected, progress);</span>
+Q.done = <span class="fstat-no" title="function not covered">function (object, fulfilled, rejected, progress) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).done(fulfilled, rejected, progress);</span>
 };
 &nbsp;
-Promise.prototype.done = <span class="fstat-no" title="function not covered" >function (fulfilled, rejected, progress) {</span>
-<span class="cstat-no" title="statement not covered" >    var onUnhandledError = <span class="fstat-no" title="function not covered" >function (error) {</span></span>
+Promise.prototype.done = <span class="fstat-no" title="function not covered">function (fulfilled, rejected, progress) {</span>
+<span class="cstat-no" title="statement not covered">    var onUnhandledError = <span class="fstat-no" title="function not covered">function (error) {</span></span>
         // forward to a future turn so that ``when``
         // does not catch it and turn it into a rejection.
-<span class="cstat-no" title="statement not covered" >        Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            makeStackTraceLong(error, promise);</span>
-<span class="cstat-no" title="statement not covered" >            if (Q.onerror) {</span>
-<span class="cstat-no" title="statement not covered" >                Q.onerror(error);</span>
+<span class="cstat-no" title="statement not covered">        Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            makeStackTraceLong(error, promise);</span>
+<span class="cstat-no" title="statement not covered">            if (Q.onerror) {</span>
+<span class="cstat-no" title="statement not covered">                Q.onerror(error);</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                throw error;</span>
+<span class="cstat-no" title="statement not covered">                throw error;</span>
             }
         });
     };
 &nbsp;
     // Avoid unnecessary `nextTick`ing via an unnecessary `when`.
-<span class="cstat-no" title="statement not covered" >    var promise = fulfilled || rejected || progress ?</span>
+<span class="cstat-no" title="statement not covered">    var promise = fulfilled || rejected || progress ?</span>
         this.then(fulfilled, rejected, progress) :
         this;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof process === "object" &amp;&amp; process &amp;&amp; process.domain) {</span>
-<span class="cstat-no" title="statement not covered" >        onUnhandledError = process.domain.bind(onUnhandledError);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof process === "object" &amp;&amp; process &amp;&amp; process.domain) {</span>
+<span class="cstat-no" title="statement not covered">        onUnhandledError = process.domain.bind(onUnhandledError);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    promise.then(void 0, onUnhandledError);</span>
+<span class="cstat-no" title="statement not covered">    promise.then(void 0, onUnhandledError);</span>
 };
 &nbsp;
 /**
@@ -6196,29 +6194,29 @@ Promise.prototype.done = <span class="fstat-no" title="function not covered" >fu
  * @returns a promise for the resolution of the given promise if it is
  * fulfilled before the timeout, otherwise rejected.
  */
-Q.timeout = <span class="fstat-no" title="function not covered" >function (object, ms, error) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).timeout(ms, error);</span>
+Q.timeout = <span class="fstat-no" title="function not covered">function (object, ms, error) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).timeout(ms, error);</span>
 };
 &nbsp;
-Promise.prototype.timeout = <span class="fstat-no" title="function not covered" >function (ms, error) {</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    var timeoutId = setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!error || "string" === typeof error) {</span>
-<span class="cstat-no" title="statement not covered" >            error = new Error(error || "Timed out after " + ms + " ms");</span>
-<span class="cstat-no" title="statement not covered" >            error.code = "ETIMEDOUT";</span>
+Promise.prototype.timeout = <span class="fstat-no" title="function not covered">function (ms, error) {</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    var timeoutId = setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!error || "string" === typeof error) {</span>
+<span class="cstat-no" title="statement not covered">            error = new Error(error || "Timed out after " + ms + " ms");</span>
+<span class="cstat-no" title="statement not covered">            error.code = "ETIMEDOUT";</span>
         }
-<span class="cstat-no" title="statement not covered" >        deferred.reject(error);</span>
+<span class="cstat-no" title="statement not covered">        deferred.reject(error);</span>
     }, ms);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.then(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        clearTimeout(timeoutId);</span>
-<span class="cstat-no" title="statement not covered" >        deferred.resolve(value);</span>
-    }, <span class="fstat-no" title="function not covered" >function (exception) {</span>
-<span class="cstat-no" title="statement not covered" >        clearTimeout(timeoutId);</span>
-<span class="cstat-no" title="statement not covered" >        deferred.reject(exception);</span>
+<span class="cstat-no" title="statement not covered">    this.then(<span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        clearTimeout(timeoutId);</span>
+<span class="cstat-no" title="statement not covered">        deferred.resolve(value);</span>
+    }, <span class="fstat-no" title="function not covered">function (exception) {</span>
+<span class="cstat-no" title="statement not covered">        clearTimeout(timeoutId);</span>
+<span class="cstat-no" title="statement not covered">        deferred.reject(exception);</span>
     }, deferred.notify);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 /**
@@ -6230,21 +6228,21 @@ Promise.prototype.timeout = <span class="fstat-no" title="function not covered" 
  * time has elapsed since the resolution of the given promise.
  * If the given promise rejects, that is passed immediately.
  */
-Q.delay = <span class="fstat-no" title="function not covered" >function (object, timeout) {</span>
-<span class="cstat-no" title="statement not covered" >    if (timeout === void 0) {</span>
-<span class="cstat-no" title="statement not covered" >        timeout = object;</span>
-<span class="cstat-no" title="statement not covered" >        object = void 0;</span>
+Q.delay = <span class="fstat-no" title="function not covered">function (object, timeout) {</span>
+<span class="cstat-no" title="statement not covered">    if (timeout === void 0) {</span>
+<span class="cstat-no" title="statement not covered">        timeout = object;</span>
+<span class="cstat-no" title="statement not covered">        object = void 0;</span>
     }
-<span class="cstat-no" title="statement not covered" >    return Q(object).delay(timeout);</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).delay(timeout);</span>
 };
 &nbsp;
-Promise.prototype.delay = <span class="fstat-no" title="function not covered" >function (timeout) {</span>
-<span class="cstat-no" title="statement not covered" >    return this.then(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >            deferred.resolve(value);</span>
+Promise.prototype.delay = <span class="fstat-no" title="function not covered">function (timeout) {</span>
+<span class="cstat-no" title="statement not covered">    return this.then(<span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">        setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            deferred.resolve(value);</span>
         }, timeout);
-<span class="cstat-no" title="statement not covered" >        return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">        return deferred.promise;</span>
     });
 };
 &nbsp;
@@ -6257,16 +6255,16 @@ Promise.prototype.delay = <span class="fstat-no" title="function not covered" >f
  *      })
  *
  */
-Q.nfapply = <span class="fstat-no" title="function not covered" >function (callback, args) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(callback).nfapply(args);</span>
+Q.nfapply = <span class="fstat-no" title="function not covered">function (callback, args) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(callback).nfapply(args);</span>
 };
 &nbsp;
-Promise.prototype.nfapply = <span class="fstat-no" title="function not covered" >function (args) {</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    var nodeArgs = array_slice(args);</span>
-<span class="cstat-no" title="statement not covered" >    nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="cstat-no" title="statement not covered" >    this.fapply(nodeArgs).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+Promise.prototype.nfapply = <span class="fstat-no" title="function not covered">function (args) {</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    var nodeArgs = array_slice(args);</span>
+<span class="cstat-no" title="statement not covered">    nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="cstat-no" title="statement not covered">    this.fapply(nodeArgs).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 /**
@@ -6278,17 +6276,17 @@ Promise.prototype.nfapply = <span class="fstat-no" title="function not covered" 
  * })
  *
  */
-Q.nfcall = <span class="fstat-no" title="function not covered" >function (callback /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var args = array_slice(arguments, 1);</span>
-<span class="cstat-no" title="statement not covered" >    return Q(callback).nfapply(args);</span>
+Q.nfcall = <span class="fstat-no" title="function not covered">function (callback /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var args = array_slice(arguments, 1);</span>
+<span class="cstat-no" title="statement not covered">    return Q(callback).nfapply(args);</span>
 };
 &nbsp;
-Promise.prototype.nfcall = <span class="fstat-no" title="function not covered" >function (/*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var nodeArgs = array_slice(arguments);</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="cstat-no" title="statement not covered" >    this.fapply(nodeArgs).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+Promise.prototype.nfcall = <span class="fstat-no" title="function not covered">function (/*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var nodeArgs = array_slice(arguments);</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="cstat-no" title="statement not covered">    this.fapply(nodeArgs).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 /**
@@ -6300,45 +6298,45 @@ Promise.prototype.nfcall = <span class="fstat-no" title="function not covered" >
  * .done()
  */
 Q.nfbind =
-Q.denodeify = <span class="fstat-no" title="function not covered" >function (callback /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    if (callback === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error("Q can't wrap an undefined function");</span>
+Q.denodeify = <span class="fstat-no" title="function not covered">function (callback /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    if (callback === undefined) {</span>
+<span class="cstat-no" title="statement not covered">        throw new Error("Q can't wrap an undefined function");</span>
     }
-<span class="cstat-no" title="statement not covered" >    var baseArgs = array_slice(arguments, 1);</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        var nodeArgs = baseArgs.concat(array_slice(arguments));</span>
-<span class="cstat-no" title="statement not covered" >        var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >        nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="cstat-no" title="statement not covered" >        Q(callback).fapply(nodeArgs).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >        return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">    var baseArgs = array_slice(arguments, 1);</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        var nodeArgs = baseArgs.concat(array_slice(arguments));</span>
+<span class="cstat-no" title="statement not covered">        var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">        nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="cstat-no" title="statement not covered">        Q(callback).fapply(nodeArgs).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">        return deferred.promise;</span>
     };
 };
 &nbsp;
 Promise.prototype.nfbind =
-Promise.prototype.denodeify = <span class="fstat-no" title="function not covered" >function (/*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var args = array_slice(arguments);</span>
-<span class="cstat-no" title="statement not covered" >    args.unshift(this);</span>
-<span class="cstat-no" title="statement not covered" >    return Q.denodeify.apply(void 0, args);</span>
+Promise.prototype.denodeify = <span class="fstat-no" title="function not covered">function (/*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var args = array_slice(arguments);</span>
+<span class="cstat-no" title="statement not covered">    args.unshift(this);</span>
+<span class="cstat-no" title="statement not covered">    return Q.denodeify.apply(void 0, args);</span>
 };
 &nbsp;
-Q.nbind = <span class="fstat-no" title="function not covered" >function (callback, thisp /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var baseArgs = array_slice(arguments, 2);</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        var nodeArgs = baseArgs.concat(array_slice(arguments));</span>
-<span class="cstat-no" title="statement not covered" >        var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >        nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="fstat-no" title="function not covered" >        function bound() {</span>
-<span class="cstat-no" title="statement not covered" >            return callback.apply(thisp, arguments);</span>
+Q.nbind = <span class="fstat-no" title="function not covered">function (callback, thisp /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var baseArgs = array_slice(arguments, 2);</span>
+<span class="cstat-no" title="statement not covered">    return <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        var nodeArgs = baseArgs.concat(array_slice(arguments));</span>
+<span class="cstat-no" title="statement not covered">        var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">        nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="fstat-no" title="function not covered">        function bound() {</span>
+<span class="cstat-no" title="statement not covered">            return callback.apply(thisp, arguments);</span>
         }
-<span class="cstat-no" title="statement not covered" >        Q(bound).fapply(nodeArgs).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >        return deferred.promise;</span>
+<span class="cstat-no" title="statement not covered">        Q(bound).fapply(nodeArgs).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">        return deferred.promise;</span>
     };
 };
 &nbsp;
-Promise.prototype.nbind = <span class="fstat-no" title="function not covered" >function (/*thisp, ...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var args = array_slice(arguments, 0);</span>
-<span class="cstat-no" title="statement not covered" >    args.unshift(this);</span>
-<span class="cstat-no" title="statement not covered" >    return Q.nbind.apply(void 0, args);</span>
+Promise.prototype.nbind = <span class="fstat-no" title="function not covered">function (/*thisp, ...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var args = array_slice(arguments, 0);</span>
+<span class="cstat-no" title="statement not covered">    args.unshift(this);</span>
+<span class="cstat-no" title="statement not covered">    return Q.nbind.apply(void 0, args);</span>
 };
 &nbsp;
 /**
@@ -6351,17 +6349,17 @@ Promise.prototype.nbind = <span class="fstat-no" title="function not covered" >f
  * @returns a promise for the value or error
  */
 Q.nmapply = // XXX As proposed by "Redsandro"
-Q.npost = <span class="fstat-no" title="function not covered" >function (object, name, args) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).npost(name, args);</span>
+Q.npost = <span class="fstat-no" title="function not covered">function (object, name, args) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).npost(name, args);</span>
 };
 &nbsp;
 Promise.prototype.nmapply = // XXX As proposed by "Redsandro"
-Promise.prototype.npost = <span class="fstat-no" title="function not covered" >function (name, args) {</span>
-<span class="cstat-no" title="statement not covered" >    var nodeArgs = array_slice(args || []);</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="cstat-no" title="statement not covered" >    this.dispatch("post", [name, nodeArgs]).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+Promise.prototype.npost = <span class="fstat-no" title="function not covered">function (name, args) {</span>
+<span class="cstat-no" title="statement not covered">    var nodeArgs = array_slice(args || []);</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="cstat-no" title="statement not covered">    this.dispatch("post", [name, nodeArgs]).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 /**
@@ -6376,22 +6374,22 @@ Promise.prototype.npost = <span class="fstat-no" title="function not covered" >f
  */
 Q.nsend = // XXX Based on Mark Miller's proposed "send"
 Q.nmcall = // XXX Based on "Redsandro's" proposal
-Q.ninvoke = <span class="fstat-no" title="function not covered" >function (object, name /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var nodeArgs = array_slice(arguments, 2);</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="cstat-no" title="statement not covered" >    Q(object).dispatch("post", [name, nodeArgs]).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+Q.ninvoke = <span class="fstat-no" title="function not covered">function (object, name /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var nodeArgs = array_slice(arguments, 2);</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="cstat-no" title="statement not covered">    Q(object).dispatch("post", [name, nodeArgs]).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 Promise.prototype.nsend = // XXX Based on Mark Miller's proposed "send"
 Promise.prototype.nmcall = // XXX Based on "Redsandro's" proposal
-Promise.prototype.ninvoke = <span class="fstat-no" title="function not covered" >function (name /*...args*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var nodeArgs = array_slice(arguments, 1);</span>
-<span class="cstat-no" title="statement not covered" >    var deferred = defer();</span>
-<span class="cstat-no" title="statement not covered" >    nodeArgs.push(deferred.makeNodeResolver());</span>
-<span class="cstat-no" title="statement not covered" >    this.dispatch("post", [name, nodeArgs]).fail(deferred.reject);</span>
-<span class="cstat-no" title="statement not covered" >    return deferred.promise;</span>
+Promise.prototype.ninvoke = <span class="fstat-no" title="function not covered">function (name /*...args*/) {</span>
+<span class="cstat-no" title="statement not covered">    var nodeArgs = array_slice(arguments, 1);</span>
+<span class="cstat-no" title="statement not covered">    var deferred = defer();</span>
+<span class="cstat-no" title="statement not covered">    nodeArgs.push(deferred.makeNodeResolver());</span>
+<span class="cstat-no" title="statement not covered">    this.dispatch("post", [name, nodeArgs]).fail(deferred.reject);</span>
+<span class="cstat-no" title="statement not covered">    return deferred.promise;</span>
 };
 &nbsp;
 /**
@@ -6405,28 +6403,28 @@ Promise.prototype.ninvoke = <span class="fstat-no" title="function not covered" 
  * @returns either the promise or nothing
  */
 Q.nodeify = nodeify;
-<span class="fstat-no" title="function not covered" >function nodeify(object, nodeback) {</span>
-<span class="cstat-no" title="statement not covered" >    return Q(object).nodeify(nodeback);</span>
+<span class="fstat-no" title="function not covered">function nodeify(object, nodeback) {</span>
+<span class="cstat-no" title="statement not covered">    return Q(object).nodeify(nodeback);</span>
 }
 &nbsp;
-Promise.prototype.nodeify = <span class="fstat-no" title="function not covered" >function (nodeback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (nodeback) {</span>
-<span class="cstat-no" title="statement not covered" >        this.then(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >            Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                nodeback(null, value);</span>
+Promise.prototype.nodeify = <span class="fstat-no" title="function not covered">function (nodeback) {</span>
+<span class="cstat-no" title="statement not covered">    if (nodeback) {</span>
+<span class="cstat-no" title="statement not covered">        this.then(<span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">            Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                nodeback(null, value);</span>
             });
-        }, <span class="fstat-no" title="function not covered" >function (error) {</span>
-<span class="cstat-no" title="statement not covered" >            Q.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                nodeback(error);</span>
+        }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">            Q.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                nodeback(error);</span>
             });
         });
     } else {
-<span class="cstat-no" title="statement not covered" >        return this;</span>
+<span class="cstat-no" title="statement not covered">        return this;</span>
     }
 };
 &nbsp;
-Q.noConflict = <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error("Q.noConflict only works when Q is used as a global");</span>
+Q.noConflict = <span class="fstat-no" title="function not covered">function() {</span>
+<span class="cstat-no" title="statement not covered">    throw new Error("Q.noConflict only works when Q is used as a global");</span>
 };
 &nbsp;
 // All code before this point will be filtered from stack traces.
@@ -6437,10 +6435,11 @@ return Q;
 });
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:27:22 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
