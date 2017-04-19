@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "#### test coverage for  [q (v1.5.0)](https://github.com/kriskowal/q)  [![npm package](https://img.shields.io/npm/v/npmtest-q.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-q) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-q.svg)](https://travis-ci.org/npmtest/node-npmtest-q)",
+    "description": "#### basic test coverage for  [q (v1.5.0)](https://github.com/kriskowal/q)  [![npm package](https://img.shields.io/npm/v/npmtest-q.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-q) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-q.svg)](https://travis-ci.org/npmtest/node-npmtest-q)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "q": "*",
@@ -36,5 +36,5 @@
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.4"
+    "version": "0.0.5"
 }

@@ -1,6 +1,6 @@
 # npmtest-q
 
-#### test coverage for  [q (v1.5.0)](https://github.com/kriskowal/q)  [![npm package](https://img.shields.io/npm/v/npmtest-q.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-q) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-q.svg)](https://travis-ci.org/npmtest/node-npmtest-q)
+#### basic test coverage for  [q (v1.5.0)](https://github.com/kriskowal/q)  [![npm package](https://img.shields.io/npm/v/npmtest-q.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-q) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-q.svg)](https://travis-ci.org/npmtest/node-npmtest-q)
 
 #### A library for promises (CommonJS/Promises/A,B,D)
 
